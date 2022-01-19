@@ -12,7 +12,7 @@
         .container{
             width: 96%;
             border: 1px solid transparent;
-            
+            color: #393939;
             
             margin: auto;
             font-family: 'Open Sans', sans-serif;
@@ -78,6 +78,15 @@
             flex: 2;
             display: grid;
             align-items: center;
+        }
+        .qtydiv>div{
+            border: 1px solid black;
+            width: 75px;
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+        .qtydiv>div:hover{
+            cursor: pointer;
         }
         .pricediv{
             display: grid;
@@ -174,17 +183,24 @@
             background-color: black;
             border: 1px solid transparent;
             color: white;
+            z-index: 2;
+            
     
 
         }
         .estimate{
             width: 96%;
-            text-align: center;
             font-size: 23px;
+            text-align: center;
+            z-index: 1;
+        }
+        .estimate>div{
             position: relative;
-            bottom: 20px;
-            left: 25px;
-            background-color: white;
+            left: 2.5%;
+            bottom: 5vh;
+            z-index: 1;
+            padding: 10px;
+            
         }
 
         
@@ -210,7 +226,7 @@
             </div>
             <div class="pricedivR">
                 <p>PRICE SUMMARY</p>
-                <p>BAG TOTAL</p>
+                <p>BAG TOTAL- <span id="bagt"></span></p>
                 <h4>Tax included and shipping calculated at checkout</h4>
                 <button>CHECK OUT</button>
             </div>
@@ -266,8 +282,12 @@
     var bagc=JSON.parse(localStorage.getItem("bag")) 
     console.log(bagc)
 
+   
+    var holdprice=bagc.map(function(elem){
+       return Math.floor(elem.price)
 
-
+    })
+    console.log(holdprice)
 
     function displaycontent(bagc){
 
@@ -324,32 +344,92 @@
                    //remove button
         var buttondiv=document.createElement("div")  
         buttondiv.className="buttondiv"         
-        var buttonR=document.createElement("button")     
-        buttonR.textContent="Remove"   
+        var buttonR=document.createElement("button")  
+        var deleteicon=document.createElement("img")
+        deleteicon.src="./images/deledte icon.png"   
+        deleteicon.style.height="20px"
+        buttonR.append(deleteicon)
         
         buttondiv.append(buttonR)
                  //button done
-        //removing item from bag ///////////////////////////////////////////////////////////////
+        //removing item from bag ///////////////////////////
        
 
 
         contentdiv.append(namedetail,buttondiv)
         
         //content box end
-        var quantity=document.createElement("span")
-        quantity.textContent="Qty"
-        qtydiv.append(quantity)
+        //qty box started
+        qtybox=document.createElement("div")
+        plusbox=document.createElement("div")
+        minus=document.createElement("div")
+        numbox=document.createElement("div")
+        var plus=document.createElement("span")
+        plus.textContent="+"
+        var mins=document.createElement("span")
+        mins.textContent="−"
+        var quant=document.createElement("span")
+        quant.textContent="1"
+
+        minus.append(mins)
+        plusbox.append(plus)
+        numbox.append(quant)
 
 
+        qtybox.append(minus,numbox,plusbox)
+        qtybox.style.display="flex"
+        qtybox.style.gap="15px"
+
+       
+        qtydiv.append(qtybox)
+        var countqty=1
+
+        plusbox.addEventListener("click",function(){
+            countqty++
+            quant.textContent=countqty
+            qtybox.append(minus,numbox,plusbox)
+            
+            holdprice[index]=countqty*Math.floor(elem.price)
+            console.log(holdprice)
+            totalp.textContent="₹ "+holdprice[index]
+            totaldiv.append(totalp)
+            maindiv.append(imgdiv,contentdiv,pricediv,qtydiv,totaldiv)
+            document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
+            
+        })
+
+        minus.addEventListener("click",function(){
+            countqty--
+            if(countqty==0){
+                document.querySelector("#product").textContent=""
+                bagc.splice(index,1)
+                console.log("here",index)
+                displaycontent(bagc)
+
+            }
+            quant.textContent=countqty
+            qtybox.append(minus,numbox,plusbox)
+
+            holdprice[index]=countqty*Math.floor(elem.price)
+            console.log(holdprice)
+            totalp.textContent="₹ "+holdprice[index]
+            totaldiv.append(totalp)
+            maindiv.append(imgdiv,contentdiv,pricediv,qtydiv,totaldiv)
+            document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
+            
+        })
     
         buttonR.addEventListener("click",function(){
             document.querySelector("#product").textContent=""
-            
-            
             bagc.splice(index,1)
             console.log("here",index)
-            displaycontent(bagc)
            
+            holdprice.splice(index,1)
+            
+            document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
+            console.log("remove")
+            displaycontent(bagc)
+            
         })
 
 
@@ -357,7 +437,7 @@
         var price=document.createElement("span")
        
         
-        price.textContent="Rs"+Math.floor(elem.price)
+        price.textContent="₹ "+Math.floor(elem.price)
         pricediv.append(price)                    //price added
 
 
@@ -365,7 +445,7 @@
         var totaldiv=document.createElement("div")
         totaldiv.id="totalprice"
         var totalp=document.createElement("p")
-        totalp.textContent="total"
+        totalp.textContent="₹ "+holdprice[index]
         totaldiv.append(totalp)
 
         
@@ -376,6 +456,15 @@
     }
 
     displaycontent(bagc)
+    function bagtotal(holdprice){
+        let sum=0
+        for(var i=0;i<holdprice.length;i++){
+            sum+=holdprice[i]
+        }
+        return sum
+    }
+    console.log(bagtotal(holdprice))
+    document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
 
    
     
