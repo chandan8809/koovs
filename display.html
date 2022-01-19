@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        #container{
+            border:2px solid black;
+            width:100%;
+            height:1600px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2,50%);
+        }
+
+        #left{
+        /* width: 50%; */
+        height:100% ;
+        border: 1px solid red;
+        }
+        #right{
+        /* width:50% ; */
+        height:100%;
+        border: 1px solid red;
+        /* padding: 20px; */
+        }
+        #right *{
+            margin-left: 10px;
+        }
+        #leftBottom{
+        height:70%;
+        border: 1px solid red;
+        }
+        #rigthBottom{
+        height:70%;
+        border: 1px solid red;
+        }
+        #rate{
+            display: flex;
+        }
+        #price{
+        text-decoration: dashed;
+        }
+        #rate p{
+            text-decoration:dashed;
+        }
+        #sez{
+            /* width: 50px; */
+            height: 20px;
+
+        }
+        #rate h3{
+            color: red;
+        }
+        #size{
+            display: flex;
+            gap: 10px;
+        }
+        #size div{
+        height: 30px;
+        width: 30px;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        margin-top: 3px;
+         
+        }
+        #social img{
+            width: 30px;
+        }
+        #opt{
+        display: flex;
+        justify-content: flex-start;
+        /* border: 1px solid black; */
+        
+        }
+        #opt button{
+         border: none;
+         font-size: larger;
+         text-decoration: underline;
+        }
+        #opt button:hover{
+            background-color: gray;
+        }
+        ul{
+            line-height: 30px;
+        }
+        #leftBottom *{
+            font-size: 18px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="left"></div>
+        <div id="right">
+            <h1>Blue Saint</h1>
+            <p>Men'S Blue Slim Fit Casual Shirt</p>
+            <div id="rate">
+                <h1>₹ 719</h1>
+                <p>₹ 1,199</p>
+                <h3>41% OFF</h3>
+            </div>
+            <p>or 4 interest-free payments of <b>₹ 179.75</b>   with  <img src="https://cdn.sezzle.in/branding/2.0/Sezzle_Logo_FullColor.svg" id="sez">
+               ⓘ</p>
+               <p>tax included.</p>
+               <div id="social">
+                   <img src="https://cdn.icon-icons.com/icons2/1488/PNG/128/5293-facebook_102565.png" alt="">
+                   <img src="https://cdn.icon-icons.com/icons2/122/PNG/128/twitter_socialnetwork_20007.png" alt="">
+                   <img src="https://cdn.icon-icons.com/icons2/840/PNG/128/Whatsapp_icon-icons.com_66931.png" alt="">
+               </div>
+              
+               <b>SIZE:S</b>
+               <div id="size">
+                   <div id="box">S</div>
+                   <div id="box">M</div>
+                   <div id="box">L</div>
+                   <div id="box">XL</div>
+               </div>
+            </div>
+        <div id="leftBottom">
+            <h1>Product Details</h1>
+            <div id="opt">
+                <button id="btn1">Info & care</button>
+                <button id="btn2">Delivery & Return</button>
+                <button id="btn3">Seller Details</button>
+            </div>
+           <p><b>Product ID :</b> 138466</p> 
+
+           <p> <b>Line ID :</b>155457 </p>   
+
+           <p><b>Material/Fabric :</b>100% Cotton</p> 
+ 
+           <p><b>Size & Fit :</b>This brand runs true to size. To ensure the best fit, we suggest consulting the size chart.</p>  
+          <p><b>Casual Shirt</b>  by <b>BLUE SAINT</b></p>  
+
+         <ul>
+            <li>Made from cotton</li>
+            <li>Mandarin collar</li>
+            <li>Button-down closure</li>
+            <li>Welt pocket front</li>
+            <li>Long sleeves</li>
+            <li>Curved hem</li>
+            <li>Slim fit</li>
+         </ul>
+
+        </div>
+        <div id="rigthBottom"></div>
+    </div>
+    
+</body>
+</html>
