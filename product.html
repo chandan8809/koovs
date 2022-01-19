@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Shirtsmen{
+            width: 100%;
+            height: 65px;
+            background-color:#f6f6f8 ;
+            border: 1px solid red;
+            text-align: center
+        }
+        .Shirtsmen p{
+            font-size: 20px;
+          font-family: poppins;
+            line-height: 26px;
+            font-weight: 600;
+        }
+        .sort{
+            width: 95%;
+            height: 50px;
+           display: flex;
+       justify-content: space-between;
+       padding: 10px;
+       text-align: center;
+        }
+        #container{
+            display: flex;
+        }
+        #container .filters{
+          width: 27%;
+          height: 550px;
+          border: 1px solid red;
+          /* position: fixed; */
+          top: 150px;
+        }
+        #container .grid{
+            width: 72%;
+             margin-left: 2%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 20px;
+            border: 1px solid red;
+        }
+        .grid>div{
+            border: 1px solid red;
+            height: 450px;
+        }
+        .grid img{
+            width: 100%;
+            height: 73%;
+           
+        }
+        .grid p{
+            margin: 4px;
+        }
+        .grid p:nth-child(4){
+            color: red;
+        }
+        .grid p:nth-child(3){
+            color:#b3b3b3 ;
+            font-size: 12px;
+           
+        }
+        .grid p:nth-child(5){
+            text-decoration: line-through;
+            color: #676565;
+        }
+
+        .grid .circleimage{
+            height: 30px;
+            width: 30px;
+            border-radius: 17px;
+            border: 1px solid lightslategray;
+            margin-top: 10px;
+        }
+        .filters .chSize{
+            width: 20px;
+           height: 15px;
+        }
+        /* .filters span{
+      
+            color: red;
+        } */
+    </style>
+</head>
+<body>
+    
+    <div class="Shirtsmen">
+       <p>Shirts Men</p> 
+    </div>
+    <div class="sort">
+        <div>Products</div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Sort By
+                  <i class="fas fa-angle-down"></i>
+                </button>
+                <div class="dropdown-content explore ">
+                    <button>Price low to High</button>
+                    <button>Price High to Low</button>
+                    </div>
+               
+        </div>
+    </div>
+    <hr>
+    <div id="container">
+        <div class="filters">
+            <h3>BRAND</h3>
+            <div>
+                <label for="BLUE SAINT">
+                  <input class="chSize"
+                    value="BLUE SAINT"
+                    type="checkbox"
+                    name="BLUE SAINT"
+                    id="BLUE SAINT"
+                  />
+                  <span>BLUE SAINT</span> </label
+                ><br />
+              </div>
+              <div>
+                <label for="KOOVS">
+                  <input class="chSize"
+                    value="KOOVS"
+                    type="checkbox"
+                    name="KOOVS"
+                    id="KOOVS"
+                  />
+                  <span>KOOVS</span> </label
+                ><br />
+              </div>
+              <div>
+                <label for="OXOLLOXO">
+                  <input class="chSize"
+                    value="OXOLLOXO"
+                    type="checkbox"
+                    name="OXOLLOXO"
+                    id="OXOLLOXO"
+                  />
+                  <span>OXOLLOXO</span> </label
+                ><br />
+              </div>
+              <div>
+                <label for="AMON">
+                  <input class="chSize"
+                    value="AMON"
+                    type="checkbox"
+                    name="AMON"
+                    id="AMON"
+                  />
+                  <span>AMON</span> </label
+                ><br />
+              </div>
+              <h3>COLOR</h3>
+        </div>
+       
+        <div class="grid">
+           
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let shirtsData=[
+        {    
+            brand:"BLUE SAINT",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/166789_8e30dfdda7bd44fe95044ffdd1f4fb9c_front_zoom_360x.jpg?v=1631093508",
+            title:"Men'S Blue Slim Fit Casual Shirt",
+            price:719,
+            cutprice:1199,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/155729_3beb75e752e94ab994db8f5ee1baff38_front_zoom_835cd658-0837-4577-abdb-9bd705bbeae4_360x.jpg?v=1627489819",
+            title:"Patch Pocket Casual Shirt",
+            price:779 ,
+            cutprice:1299 ,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/155019_9d59d3c11b3545678664f69dda64a402_front_zoom_360x.jpg?v=1631091121",
+            title:"Basic Long Sleeve Shirt",
+            price:500 ,
+            cutprice:999 ,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/166785_9d09aeb5096b4880a5f8a9895b828a1f_front_zoom_360x.jpg?v=1627494134",
+            title:"Classic Floral Print Cuban Collar Shirt",
+            price:520 ,
+            cutprice:1299,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/158280_10a2102ae52d4067a166892af2982dc7_front_zoom_360x.jpg?v=1631091977",
+            title:"Floral Placement Print Casual Shirt",
+            price: 320,
+            cutprice:1599 ,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/166786_f13187e91c754ac297b992f4dcada08f_front_zoom_360x.jpg?v=1631093496",
+            title:"Multi Floral Print Cuban Collar Shirt",
+            price: 520,
+            cutprice:1299 ,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167346_45937b3e08424030ad77b6c19bb02ea3_front_zoom_360x.jpg?v=1631125656",
+            title:"Contrast Stripe Down Casual Shirt",
+            price:760 ,
+            cutprice:1899,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_6723_360x.jpg?v=1634749571",
+            title:"Stripe Down Casual Shirt",
+            price:760 ,
+            cutprice:1899,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/166782_2e7084106b304383b857669432fc108d_front_zoom_360x.jpg?v=1631093307",
+            title:"Multi Floral Print Cuban Collar Shirt",
+            price:520,
+            cutprice:1299 ,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/155214_0cbf2969ac744d1b91042b8bd22b159d_left_zoom_360x.jpg?v=1631121387",
+            title:"Blue Saint Tiger Print Collar Shirt",
+            price:899 ,
+            cutprice:1499 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167333_0b49ece315814668808384961a465bae_front_zoom_c537f07e-9728-4379-bfcb-ee708c246614_360x.jpg?v=1627497706",
+            title:"Button-Down Oversized Fit Shirt",
+            price:1000 ,
+            cutprice: 1999,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_3883_360x.jpg?v=1632994472",
+            title:"Blue Saint Men'S Casual Shirts",
+            price:760 ,
+            cutprice:1899 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/169627_4a761c015faf431eab3b080cfbb2516e_left_zoom_80da2a3c-c146-418e-913d-894b84191c6a_360x.jpg?v=1640616016",
+            title:"Polka Dot Casual Shirt",
+            price:600 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_4286_360x.jpg?v=1636525880",
+            title:"Catllastic Black Printed Casual Shirt",
+            price:570,
+            cutprice:1899 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/0U9A2321_ba42ae9e-2691-4348-8534-53a760d10463_360x.jpg?v=1634749624",
+            title:"Catllastic Crey Casual Mens Shirt",
+            price:899,
+            cutprice:1499 ,
+
+        },
+        {    
+            brand:"AMON",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/165671_2838050b138a4006b04c9e304f6d22cb_front_zoom_e0baad47-88fa-4eaf-a9d2-4e4c169c9a2b_360x.jpg?v=1627497344",
+            title:"Fish Print Patch Pocket Shirt",
+            price:500 ,
+            cutprice:999,
+
+        },
+        {    
+            brand:"AMON",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_8637_360x.jpg?v=1634749623",
+            title:"Amon Men'S Navy Checkered Shirt",
+            price:1199,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/165432_3d86b528730142a5a850f33ae8222fa9_front_zoom_360x.jpg?v=1631123775",
+            title:"Amon Men'S Shirt",
+            price:500,
+            cutprice:999,
+
+        },
+        {    
+            brand:"AMON",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_8812_360x.jpg?v=1634749623",
+            title:"Amon Men'S Grey Printed Shirt",
+            price:1199 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/172000_fe44104209e3495fad22a366ea9a4002_back_super_zoom_360x.jpg?v=1634749625",
+            title:"Amon Men'S Red Checkered Shirt",
+            price:1000 ,
+            cutprice:1499,
+
+        },
+    ]
+
+        AppendShirts(shirtsData);
+    function AppendShirts(arr){
+        document.querySelector(".grid").innerHTML=null;
+       arr.map((el)=>{
+           let div1=document.createElement("div");
+           let img=document.createElement("img");
+           img.src=el.imgurl;
+           let title=document.createElement("p");
+           title.textContent=el.title;
+           let brand=document.createElement("p");
+           brand.textContent=el.brand;
+           let price=document.createElement("p");
+           price.textContent="₹"+el.price;
+           price.style.display="inline-block";
+           let cutprice=document.createElement("p");
+           cutprice.textContent="₹"+el.cutprice;
+           cutprice.style.display="inline-block";
+           let img1=document.createElement("img");
+           img1.setAttribute("class","circleimage");
+            img1.src=el.imgurl;
+        // let span=document.createElement("span");
+        // span.style.backgroundImage="url(el.imgurl)";
+        // console.log(span);
+        let div2=document.createElement("div");
+        div2.append(img1)
+           div1.append(img,title,brand,price,cutprice,div2);
+           
+           document.querySelector(".grid").append(div1);
+       });
+    }
+
+
+    // filter BLUE SAINT BRAND
+    document.getElementById("BLUE SAINT").addEventListener("click", BLUESAINTbrand);
+function BLUESAINTbrand() {
+  var arr = shirtsData;
+  
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("BLUE SAINT").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  AppendShirts(arr);
+}
+// filter koovs BRAND
+
+document.getElementById("KOOVS").addEventListener("click", KOOVSbrand);
+function KOOVSbrand() {
+  var arr = shirtsData;
+  
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("KOOVS").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  AppendShirts(arr);
+}
+// filter for OXOLLOXO BRAND
+document.getElementById("OXOLLOXO").addEventListener("click", OXOLLOXObrand);
+function OXOLLOXObrand() {
+  var arr = shirtsData;
+  
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("OXOLLOXO").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  AppendShirts(arr);
+}
+
+// filter for AMON BRAND
+document.getElementById("AMON").addEventListener("click", AMONbrand);
+function AMONbrand() {
+  var arr = shirtsData;
+  
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("AMON").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  AppendShirts(arr);
+}
+</script>
