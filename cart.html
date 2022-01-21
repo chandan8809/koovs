@@ -44,8 +44,10 @@
         .pricedivR{
             width: 31%;
             height: auto;
-            padding: 20px 10px;
-            line-height: 8px;
+            padding: 30px 10px;
+        
+            
+
         }
         #static{
             display: flex;
@@ -109,13 +111,21 @@
             
             height: 90px;
             font-size: 15px;
-            line-height: 5px;
+            
         }
         .namedetaildiv>h3{
-            font-size: 14px;
+            font-size: 12px;
             color: gray;
-            font-weight: 300;
-            line-height: 0px;
+            font-weight: 200;
+            margin: 0px;
+            
+        }
+        .namedetaildiv>p{
+            font-size: 14px;
+            color: black;
+            font-weight: 400;
+            margin: 0px;
+            
         }
         .maindiv>div{
             height: 100%;
@@ -140,14 +150,16 @@
         .pricedivR p{
             font-size: 15px;
             font-weight: 500;
+            margin: 0px;
         }
         .pricedivR h4{
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
+            margin: 0px;
         }
         .pricedivR button{
             padding: 10px 80px ;
-            margin-top: 12px;
+            margin-top: 14px;
             color: white;
             background-color: black;
             border: 1px solid transparent;
@@ -223,6 +235,37 @@
         #selectcty{
             border: .2px solid gainsboro;
         }
+        @media only screen and (max-width: 800px) {
+            .buttondiv{
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .buttondiv{
+                display: none;
+            }
+            .estimate{
+                display: none;
+            }
+            .bottomdiv{
+                display: none;
+            }
+            .bodydiv{
+                display: flex;
+                flex-direction: column;
+            }
+            .productdiv{
+                width: 100%;
+            }
+            .pricedivR{
+                width: 100%;
+            }
+            #qtyboxdiv{
+                width: 50px;
+                font-size: 14px;
+            }
+        }
+        
 
         
       
@@ -287,7 +330,7 @@
             
         </div>
         <div>
-            <button id="cal">CALCULATE SHIPPING</button>
+            <button id="cal" style="padding: 12px 0px;">CALCULATE SHIPPING</button>
         </div>
 
 
@@ -374,13 +417,14 @@
         buttondiv.className="buttondiv"         
         var buttonR=document.createElement("button")  
         buttonR.style.background="white"
-        buttonR.style.border="1px solid gray"
+        buttonR.style.border="1px solid transparent"
         var deleteicon=document.createElement("img")
-        deleteicon.src="./images/deledte icon.png"   
+        deleteicon.src="./images/download.png"   
         deleteicon.style.height="20px"
         buttonR.append(deleteicon)
         
         buttondiv.append(buttonR)
+        
                  //button done
         //removing item from bag ///////////////////////////
        
@@ -411,6 +455,7 @@
         qtybox.append(minus,numbox,plusbox)
         qtybox.style.display="flex"
         qtybox.style.gap="15px"
+        qtybox.id="qtyboxdiv"
 
        
         qtydiv.append(qtybox)
