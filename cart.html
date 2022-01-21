@@ -3,21 +3,24 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+            color: #393939;
+
+        }
         .container{
             width: 96%;
             border: 1px solid transparent;
             color: #393939;
             
             margin: auto;
-            font-family: 'Open Sans', sans-serif;
-            font-family: 'Roboto', sans-serif;
-
+            font-family: 'Poppins', sans-serif;
         }
         .mybag{
             width: 100%;
@@ -25,7 +28,8 @@
             border: 1px solid transparent;
             text-align: center;
             font-size: 22px;
-            font-weight: 500;
+            font-weight: 600;
+            color: black;
         }
         .container div{
             border: 1px solid transparent;
@@ -45,6 +49,7 @@
         }
         #static{
             display: flex;
+            color: black;
         }
         #static>:nth-child(1){
             flex: 4;
@@ -148,19 +153,20 @@
             border: 1px solid transparent;
         }
         .pricedivR button:hover{
-            background-color: rgb(53, 53, 53);
+            background-color: gray
         }
+        
        
         .bottomdiv{
             width: 100%;
             display: flex;
-            border: 1px solid gray;
+            border: .5px solid gray;
             justify-content: center;
             gap: 3%;
             padding: 40px 0px;
             margin-top: 0px;
             position: relative;
-            bottom: 40px;
+            bottom: 50px;
 
 
         }
@@ -200,7 +206,22 @@
             bottom: 5vh;
             z-index: 1;
             padding: 10px;
+            color: black;
             
+        }
+        .hidden{
+            border-bottom: 1px solid black;
+            margin-top: -40px;
+            text-align: center;
+            
+
+            display: none; 
+        }
+        #cal:hover{
+            background-color: gray;
+        }
+        #selectcty{
+            border: .2px solid gainsboro;
         }
 
         
@@ -228,34 +249,30 @@
                 <p>PRICE SUMMARY</p>
                 <p>BAG TOTAL- <span id="bagt"></span></p>
                 <h4>Tax included and shipping calculated at checkout</h4>
-                <button>CHECK OUT</button>
+                <button id="checkout">CHECK OUT</button>
             </div>
         </div>
     </div>
     <div class="estimate">
         <div style="background-color: white; display: inline;font-weight: 600;">Estimate Shipping</div>
     </div>
+    
     <div class="bottomdiv">
         <div>
             <p>Country</p>
             <select id="selectcty">
                 <option value="">India</option>
-                <option value="">Japan</option>
-                <option value="">Australia</option>
-                <option value="">New Zealend</option>
-                <option value="">Usa</option>
-                
             </select>
 
         </div>
         <div>
             <p>Province</p>
             <select id="selectcty">
-                <option value="">Jharkhand</option>
-                <option value="">Up</option>
-                <option value="">Hydrabad</option>
-                <option value="">Assam</option>
-                <option value="">Bihar</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Up">Up</option>
+                <option value="Hydrabad">Hydrabad</option>
+                <option value="Assam">Assam</option>
+                <option value="Assam">Assam</option>
                 
             </select>
             
@@ -270,14 +287,34 @@
             
         </div>
         <div>
-            <button>CALCULATE SHIPPING</button>
+            <button id="cal">CALCULATE SHIPPING</button>
         </div>
 
+
+    </div>
+    <div class="hidden">
+        <p>We found one shipping rate available for your location<br>*Standard Shipping at ₹ 99*</p>
     </div>
     
 </body>
 </html>
 <script>
+    document.querySelector("#checkout").addEventListener("click",function(){
+        setTimeout(function(){
+            window.location.href="./checkout.html"
+
+        },200)
+       
+    })
+    document.querySelector("#cal").addEventListener("click",function(){
+        setTimeout(function(){
+            document.querySelector(".hidden").style.display="block"
+
+        },500)
+       
+   
+
+    })
    
     var bagc=JSON.parse(localStorage.getItem("bag")) 
     console.log(bagc)
@@ -320,21 +357,12 @@
         var prodname=document.createElement("p")
         prodname.innerHTML=elem.name
         
-       
-                  //namedetaails end
-
-                  //sizedetails 
-       
-
         var prodsize=document.createElement("h3")
         prodsize.textContent="Size: "+elem.size
         
         var prodcolor=document.createElement("h3")
         prodcolor.innerHTML="Color: "+elem.color
 
-       
-        
-        
         namedetail.append(brandname,prodname,prodcolor,prodsize)
         
 
@@ -345,6 +373,8 @@
         var buttondiv=document.createElement("div")  
         buttondiv.className="buttondiv"         
         var buttonR=document.createElement("button")  
+        buttonR.style.background="white"
+        buttonR.style.border="1px solid gray"
         var deleteicon=document.createElement("img")
         deleteicon.src="./images/deledte icon.png"   
         deleteicon.style.height="20px"
@@ -369,7 +399,9 @@
         var mins=document.createElement("span")
         mins.textContent="−"
         var quant=document.createElement("span")
-        quant.textContent="1"
+        var countqty=JSON.parse(localStorage.getItem("count"))||1;
+       
+        quant.textContent=countqty;
 
         minus.append(mins)
         plusbox.append(plus)
@@ -382,10 +414,11 @@
 
        
         qtydiv.append(qtybox)
-        var countqty=1
-
+        
+       
         plusbox.addEventListener("click",function(){
             countqty++
+            localStorage.setItem("count",JSON.stringify(countqty))
             quant.textContent=countqty
             qtybox.append(minus,numbox,plusbox)
             
@@ -400,6 +433,7 @@
 
         minus.addEventListener("click",function(){
             countqty--
+            localStorage.setItem("count",JSON.stringify(countqty))
             if(countqty==0){
                 document.querySelector("#product").textContent=""
                 bagc.splice(index,1)
@@ -461,9 +495,12 @@
         for(var i=0;i<holdprice.length;i++){
             sum+=holdprice[i]
         }
+        localStorage.setItem("sumtotal",sum)
         return sum
+        
     }
     console.log(bagtotal(holdprice))
+
     document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
 
    
