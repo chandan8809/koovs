@@ -23,12 +23,12 @@
   display: flex;
 }
 #container .filters {
-  width: 27%;
-  height: 400px;
+  width: 20%;
+  height: 500px;
   border: 1px solid transparent;
   /* position: -webkit-sticky; */
   top: 150px;
-  overflow: scroll;
+  overflow-y: scroll;
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

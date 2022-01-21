@@ -1,407 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body{
-            margin: 0px;
-            font-family: 'Poppins', sans-serif;
-            color: #393939;
+      body {
+        margin: 0px;
+        font-family: "Poppins", sans-serif;
+        color: #393939;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+      }
 
-        }
-        .container{
-            display: flex;
-            width: 100%;
-            
-            
-            
-        }
-       
-        .left{
-            flex: 5.6;
-        }
-        .right{
-            flex: 4.4;
-        
-            background-color: #fafafa;
-            border-left: 1px solid gainsboro;
-        
-            
-        }
-        .prod img{
-            height: 64px;
-        }
-        .imgdiv{
-            border: 1px solid gainsboro;
-            width: 64px;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .maindiv{
-            display: flex;
-            line-height: 0px;
-            
-           
-            
-        }
-        .namedetaildiv{
-            margin-left: 10px;
-            width: 65%;
-        }
-        .inside{
-            margin-left: 8%;
-            margin-top: 10vh;
-            width: 75%;
-            
-            
+      .left {
+        flex: 5.6;
+      }
+      .right {
+        flex: 4.4;
 
-        }
-        .inside div{
-            margin-top: 5px;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-       
-        #discount input{
-            width: 70%;
-            height: 4vh;
-            padding: 5px 10px;
-           
-        }
-        
-        #discount button{
-            
-            padding: 10px 24px;
-           
-        }
-        #discount{
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0px;
-        }
-        #net{
-            font-size: 20px;
-            color: black;
-            font-weight: 600;
-        }
-        #kooImg img{
-            width: 170px;
-            
-            margin-left: 11%;
-            
-    
-        }
-        .insidel{
-            width: 75%;
-            margin-left: 15.5%;
+        background-color: #fafafa;
+        border-left: 1px solid gainsboro;
+      }
+      .prod img {
+        height: 64px;
+      }
+      .imgdiv {
+        border: 1px solid gainsboro;
+        width: 64px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .maindiv {
+        display: flex;
+      }
+      .namedetaildiv p {
+        margin: 0px;
+      }
+      .namedetaildiv h4 {
+        margin: 0px;
+      }
+      .namedetaildiv {
+        margin-left: 10px;
+        width: 65%;
+      }
+      .inside {
+        margin-left: 8%;
+        margin-top: 10vh;
+        width: 75%;
+      }
+      .inside div {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
 
-        }
-       
-        a{
-            text-decoration: none;
-            font-size: 11px;
-            position: relative;
-            bottom: 2px;
-            
-        }
-        #pages{
-            position: relative;
-            bottom: 20px;
-        }
-        #cont{
-            margin-top: -15px;
-        }
-       
-        #butts{
-            padding: 30px 0px;
-            display: flex;
-            justify-content: space-between;
-        }
-        #butts p{
-            display: inline;
-            font-size: 12px;
-            color: blue;
+      #discount input {
+        width: 70%;
+        height: 4vh;
+        padding: 5px 10px;
+      }
 
-        }
-        #butts button{
-            padding: 18px 25px;
-            background-color: black;
-            color: white;
-            border: 1px solid transparent;
-            border-radius: 5px;
-        }
-        #reserve{
-            margin-top: 5vh;
-            padding: 10px 0px;
-            font-size: 11px;
-            border-top: 1px solid gray;
-        }
-        #div1{
-            width: 94%;
-            height: 17.3vh;
-            border: 1px solid gainsboro;
-            font-size: 13px;
-            padding: 15px;
-            border-radius: 5px;
-            
+      #discount button {
+        padding: 10px 24px;
+      }
+      #discount {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px;
+      }
+      #net {
+        font-size: 20px;
+        color: black;
+        font-weight: 600;
+      }
+      #kooImg img {
+        width: 170px;
 
-        }
-       
-        
-        #div1 hr{
-            margin-top: 2vh;
-            margin-bottom: 2vh;
-            border: 0.1 px solid gainsboro
-        }
-        #div1 span{
-            display: inline-block;
-            
-        }
-        #email{
-            width: 72%;
-            margin-left: 5%;
-        }
-        #address{
-            width: 72%;
-            margin-left: 6.7%;
-        }
-        #std{
-            width: 72%;
-            margin-left: 5.2%;
+        margin-left: 11%;
+      }
+      .insidel {
+        width: 75%;
+        margin-left: 15.5%;
+      }
 
-        }
-        #card img{
-            width: 520px;
-        
-        }
-        #billing{
-            width: 94%;
-            
-            border: 1px solid gainsboro;
-            font-size: 13px;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        #diff{
-            width: 94%;
-            
-            border: 1px solid gainsboro;
-            font-size: 13px;
-            padding: 15px;
-            border-radius: 5px;
+      a {
+        text-decoration: none;
+        font-size: 11px;
+        position: relative;
+        bottom: 2px;
+        color: blue;
+      }
+      #pages {
+        position: relative;
+        bottom: 20px;
+      }
+      #cont {
+        margin-top: -15px;
+      }
 
-        }
-         .bottomvars{
-            width: 100%;
-            height: 350px;
-            
-            
-            
-            border: 1px solid transparent;
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            grid-gap: 10px;
-            grid-template-areas: 
-            "Email Email"
-            "Fname Lname"
-            "comp comp"
-            "Address Address"
-            "Add2 PC"
-            "City Region"
-            "Phone Phone"
-            
-        }
-        .bottomvars>input{
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid gainsboro;
-        }
+      #butts {
+        padding: 30px 0px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #butts p {
+        display: inline;
+        font-size: 12px;
+        color: blue;
+      }
+      #butts button {
+        padding: 18px 25px;
+        background-color: black;
+        color: white;
+        border: 1px solid transparent;
+        border-radius: 5px;
+      }
+      #reserve {
+        margin-top: 5vh;
+        padding: 10px 0px;
+        font-size: 11px;
+        border-top: 1px solid gainsboro;
+      }
+      .div1 {
+        width: 94%;
+        display: flex;
+        flex-grow: 1;
+        gap: 30px;
+        border: 1px solid gainsboro;
+        font-size: 13px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .div2 {
+        width: 94%;
+        display: flex;
 
-       #againadd{
-           padding: 3%;
-           background-color: #fafafa;
-           border: 1px solid gainsboro;
-           display: none;
-       }
-      
-      
+        gap: 7px;
+        border: 1px solid gainsboro;
+        font-size: 13px;
+        padding: 15px;
+        border-radius: 5px;
+      }
 
-       
+      #std {
+        width: 72%;
+        margin-left: 5.2%;
+      }
+      #card img {
+        width: 350px;
+      }
+      #billing {
+        width: 94%;
+
+        border: 1px solid gainsboro;
+        font-size: 13px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      #diff {
+        width: 94%;
+
+        border: 1px solid gainsboro;
+        font-size: 13px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .bottomvars {
+        width: 100%;
+        height: 350px;
+
+        border: 1px solid transparent;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        grid-template-areas:
+          "Email Email"
+          "Fname Lname"
+          "comp comp"
+          "Address Address"
+          "Add2 PC"
+          "City Region"
+          "Phone Phone";
+      }
+      .bottomvars > input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid gainsboro;
+      }
+
+      #againadd {
+        padding: 3%;
+        background-color: #fafafa;
+        border: 1px solid gainsboro;
+        display: none;
+      }
+      #gotoship:hover {
+        background-color: gray;
+      }
+      @media only screen and (max-width: 480px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+        .left {
+          width: 100%;
+        }
+        .right {
+          width: 100%;
+        }
+        #reserve {
+          display: none;
+        }
+        #kooImg img {
+          width: 170px;
+
+          margin-left: 3%;
+        }
+        .insidel {
+          width: 75%;
+          margin-left: 9%;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="left">
-            <div id="kooImg">
-                <img src="./images/koovs logo.jpg" alt="logo">
-            </div>
-            <div class="insidel">
-                <div id="pages">
-                    <p><a href="">Cart</a> > <a href="">Information</a> > <a href="">Shipping</a> > <a href="">Payment</a></p>
-                </div>
-                <div class="bottomvar">
-                    <div id="div1">
-                        <span>Contact</span><span id="email">chandankrbit3</span><span>Change</span>
-                        <hr>
-                        <span>Ship to</span><span id="address">Address</span><span>Change</span>
-                        <hr>
-                        <span>Method</span><span id="std">Standard Shipping · ₹99.00</span>
-
-                    </div>
-                </div>
-                <p>Payment<br><span style="font-size: 12px;">All transactions are secure and encrypted.</span></p>
-                <div id="card">
-                    <img src="./images/card details.png" alt="">
-                   
-                </div>
-                <div>
-                   <p>Billing Address<br><span style="font-size: 12px;">Select the address that matches your card or payment method</span></p>
-                </div>
-                <div id="billing">
-                    <div id="blackbut" style="width: 16px;height: 16px; border: 1px solid black;border-radius: 50%;display: inline-block;position: relative;top: 4px; background-color:black;"></div>
-                    <span style="margin-left: 7px;">Same as shopping adress</span>
-                </div>
-                <div id="diff">
-                    <div id="bluebut" style="width: 16px;height: 16px; border: 1px solid black;border-radius: 50%;display: inline-block;position: relative;top: 4px;"></div>
-                    <span style="margin-left: 7px;">Use a different billing address</span>
-
-                </div>
-               
-                <div id="againadd">
-                    <div class="bottomvars">
-                        <input id="Email" placeholder="Country/region" style="grid-area:Email ;">
-                        <input id="Fname" placeholder="First Name" style="grid-area:Fname;">
-                        <input id="Lname" placeholder="Last Name" style="grid-area:Lname ;">
-                        <input id="comp" placeholder="Company(optional)" style="grid-area: comp;">
-                        <input id="Address" placeholder="Address" style="grid-area:Address ;">
-                        <input id="Add2" placeholder="Address 2 (Optonal)" style="grid-area:Add2 ;">
-                        <input id="PC" placeholder="Postal Code" style="grid-area:PC;">
-                        <input id="City" placeholder="City" style="grid-area:City ;">
-                        <input id="Region" placeholder="Region (Optonal)" style="grid-area:Region;">
-                        <input id="Phone" placeholder="Phone" style="grid-area:Phone ;">
-                        
-                    </div>
-                    
-                </div>
-                
-
-            
-                
-    
-                <div id="butts">
-                    <a href="./shipping.html"> <p style="position:relative; top:30px">Return to Shipping</p></a>
-                    <button>Complete order</button>
-                </div>
-                <div id="reserve">
-                    <div>All rights reserved Koovs</div>
-                </div> 
-
-
-            </div>
-            
+      <div class="left">
+        <div id="kooImg">
+          <img src="./images/koovs logo.jpg" alt="logo" />
         </div>
-        <div class="right">
-            <div class="inside">
-                <div class="prod"></div>
-                <hr>
-                <div id="discount">
-                    <input type="text" placeholder="Gift card or discount card">
-                    <button>Apply</button>
-
-                </div>
-                <hr>
-                <div style="display: flex; justify-content: space-between;">
-                    <div>Subtotal</div>
-                    <div id="sum"></div>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <div>Shipping</div>
-                    <div>₹ 99</div>
-                </div>
-                <hr>
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="margin-top: 10px;">Total</div>
-                    <div id="net"></div>
-                </div>
-                
+        <div class="insidel">
+          <div id="pages">
+            <p>
+              <a href="./cart.html">Cart</a> >
+              <a href="./checkout.html">Information</a> >
+              <a href="./shipping.html">Shipping</a> >
+              <a href="./payment.html"
+                ><strong style="color: black">Payment</strong></a
+              >
+            </p>
+          </div>
+          <div class="bottomvar">
+            <div class="div1">
+              <span>Contact</span
+              ><span id="email" style="flex-grow: 3">chandankrbit3</span
+              ><span style="color: blue; font-size: 11px">Change</span>
             </div>
-            
+            <div class="div1">
+              <span style="width: 53px">Ship to</span
+              ><span id="address" style="flex-grow: 3">Address</span
+              ><span style="color: blue; font-size: 11px">Change</span>
+            </div>
+            <div class="div2">
+              <span>Method</span
+              ><span id="std">Standard Shipping · ₹99.00</span>
+            </div>
+          </div>
+          <p>
+            Payment<br /><span style="font-size: 12px"
+              >All transactions are secure and encrypted.</span
+            >
+          </p>
+          <div id="card">
+            <img src="./images/card details.png" alt="" />
+          </div>
+          <div>
+            <p>
+              Billing Address<br /><span style="font-size: 12px"
+                >Select the address that matches your card or payment
+                method</span
+              >
+            </p>
+          </div>
+          <div id="billing">
+            <div
+              id="blackbut"
+              style="
+                width: 16px;
+                height: 16px;
+                border: 1px solid black;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: 4px;
+                background-color: black;
+              "
+            ></div>
+            <span style="margin-left: 7px">Same as shopping adress</span>
+          </div>
+          <div id="diff">
+            <div
+              id="bluebut"
+              style="
+                width: 16px;
+                height: 16px;
+                border: 1px solid black;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: 4px;
+              "
+            ></div>
+            <span style="margin-left: 7px"
+              >Use a different billing address</span
+            >
+          </div>
+
+          <div id="againadd">
+            <div class="bottomvars">
+              <input
+                id="Email"
+                placeholder="Country/region"
+                style="grid-area: Email"
+              />
+              <input
+                id="Fname"
+                placeholder="First Name"
+                style="grid-area: Fname"
+              />
+              <input
+                id="Lname"
+                placeholder="Last Name"
+                style="grid-area: Lname"
+              />
+              <input
+                id="comp"
+                placeholder="Company(optional)"
+                style="grid-area: comp"
+              />
+              <input
+                id="Address"
+                placeholder="Address"
+                style="grid-area: Address"
+              />
+              <input
+                id="Add2"
+                placeholder="Address 2 (Optonal)"
+                style="grid-area: Add2"
+              />
+              <input id="PC" placeholder="Postal Code" style="grid-area: PC" />
+              <input id="City" placeholder="City" style="grid-area: City" />
+              <input
+                id="Region"
+                placeholder="Region (Optonal)"
+                style="grid-area: Region"
+              />
+              <input id="Phone" placeholder="Phone" style="grid-area: Phone" />
+            </div>
+          </div>
+
+          <div id="butts">
+            <a href="./shipping.html">
+              <p style="position: relative; top: 30px">Return to Shipping</p></a
+            >
+            <a href="Thank_you.html"
+              ><button id="gotoship">Complete order</button></a
+            >
+          </div>
+          <div id="reserve">
+            <div>All rights reserved Koovs</div>
+          </div>
         </div>
+      </div>
+      <div class="right">
+        <div class="inside">
+          <div class="prod"></div>
+          <hr />
+          <div id="discount">
+            <input type="text" placeholder="Gift card or discount card" />
+            <button>Apply</button>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <div>Subtotal</div>
+            <div id="sum"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <div>Shipping</div>
+            <div>₹ 99</div>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <div style="margin-top: 10px">Total</div>
+            <div id="net"></div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    
-</body>
+  </body>
 </html>
 <script>
-    document.querySelector("#bluebut").addEventListener("click",function(){
-        
-        document.querySelector("#againadd").style.display="block"
-        document.querySelector("#bluebut").style.backgroundColor="black"
-        document.querySelector("#blackbut").style.backgroundColor="white"
-    })
-    document.querySelector("#blackbut").addEventListener("click",function(){
-        
-        document.querySelector("#againadd").style.display="none"
-        document.querySelector("#bluebut").style.backgroundColor="white"
-        document.querySelector("#blackbut").style.backgroundColor="black"
-    })
+  document.querySelector("#bluebut").addEventListener("click", function () {
+    document.querySelector("#againadd").style.display = "block";
+    document.querySelector("#bluebut").style.backgroundColor = "black";
+    document.querySelector("#blackbut").style.backgroundColor = "white";
+  });
+  document.querySelector("#blackbut").addEventListener("click", function () {
+    document.querySelector("#againadd").style.display = "none";
+    document.querySelector("#bluebut").style.backgroundColor = "white";
+    document.querySelector("#blackbut").style.backgroundColor = "black";
+  });
 
-     document.querySelector("#sum").textContent="₹ "+localStorage.getItem("sumtotal")
-     var totalsum=localStorage.getItem("sumtotal")
-     var addit=99;
-     net=Number(totalsum)+Number(addit)
-     document.querySelector("#net").textContent="₹ "+net
-     var bagc=JSON.parse(localStorage.getItem("bag")) 
+  document.querySelector("#sum").textContent =
+    "₹ " + localStorage.getItem("sumtotal");
+  var totalsum = localStorage.getItem("sumtotal");
+  var addit = 99;
+  net = Number(totalsum) + Number(addit);
+  document.querySelector("#net").textContent = "₹ " + net;
+  var bagc = JSON.parse(localStorage.getItem("bag"));
 
-     bagc.map(function(elem,index){
-        var maindiv=document.createElement("div")
-        maindiv.className="maindiv";
+  bagc.map(function (elem, index) {
+    var maindiv = document.createElement("div");
+    maindiv.className = "maindiv";
 
-        var imgdiv=document.createElement("div")
-        imgdiv.className="imgdiv";
+    var imgdiv = document.createElement("div");
+    imgdiv.className = "imgdiv";
 
-        var namedetail=document.createElement("div")
-        namedetail.className="namedetaildiv"
+    var namedetail = document.createElement("div");
+    namedetail.className = "namedetaildiv";
 
-        var pricediv=document.createElement("div")
-        pricediv.className="pricediv"            //all divs created
+    var pricediv = document.createElement("div");
+    pricediv.className = "pricediv"; //all divs created
 
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.imgurl);
+    imgdiv.append(img);
 
-        var img=document.createElement("img")
-        img.setAttribute("src",elem.imgUrl)
-        imgdiv.append(img)  
-       
-        var namedetail=document.createElement("div")
-        namedetail.className="namedetaildiv"
-       
-        
-       
-        var prodname=document.createElement("p")
-        prodname.innerHTML=elem.name
-        
-        var prodcolor=document.createElement("h4")
-        prodcolor.innerHTML=elem.color+"/"+elem.size;
-        prodcolor.style.fontSize="14px"
-        prodcolor.style.color="gray"
-        prodcolor.style.fontWeight="200"
+    var namedetail = document.createElement("div");
+    namedetail.className = "namedetaildiv";
 
-        namedetail.append(prodname,prodcolor)
+    var prodname = document.createElement("p");
+    prodname.innerHTML = elem.name;
+    prodname.style.color = "black";
 
-        
-        var pricediv=document.createElement("div")
-        price=document.createElement("p")
-        price.textContent="₹ "+Math.floor(elem.price)
-        pricediv.append(price)   
-        maindiv.append(imgdiv,namedetail,pricediv)
+    var prodcolor = document.createElement("h4");
+    prodcolor.innerHTML = elem.color + "/" + elem.size;
+    prodcolor.style.fontSize = "12px";
+    prodcolor.style.color = "gray";
+    prodcolor.style.fontWeight = "200";
 
-        document.querySelector(".prod").append(maindiv)
+    namedetail.append(prodname, prodcolor);
 
-        
-     })                     
+    var pricediv = document.createElement("div");
+    price = document.createElement("p");
+    price.textContent = "₹ " + Math.floor(elem.price);
+    pricediv.append(price);
+    maindiv.append(imgdiv, namedetail, pricediv);
+
+    document.querySelector(".prod").append(maindiv);
+  });
 </script>
