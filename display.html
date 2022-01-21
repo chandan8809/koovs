@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display</title>
     <style>
+        *{
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+  
         #container{
             border:2px solid black;
             width:100%;
@@ -16,12 +20,12 @@
         }
 
         #left{
-        /* width: 50%; */
+        
         height:100% ;
         border: 1px solid red;
         }
         #right{
-        /* width:50% ; */
+        
         height:100%;
         border: 1px solid red;
         /* padding: 20px; */
@@ -30,11 +34,22 @@
             margin-left: 10px;
         }
         #leftBottom{
-        height:70%;
+        height:80%;
         border: 1px solid red;
         }
+        #p_box{
+            height: 10%;
+            width: 95%;
+            border: 1px solid black;
+        }
+        #show_details{
+        width: 95%;
+        height: 75%;
+        border: 1px solid black;
+        
+        }
         #rigthBottom{
-        height:70%;
+        height:80%;
         border: 1px solid red;
         }
         #rate{
@@ -63,10 +78,22 @@
         width: 30px;
         border: 1px solid black;
         border-radius: 50%;
-        text-align: center;
-        margin-top: 3px;
-         
-        }
+        justify-content: center;
+        margin-top : 30px;
+        
+       }
+       #size div>h3{
+           align-items: center;
+           position: relative;
+           bottom: 14px;
+        
+        
+           
+       }
+
+       #size div:hover{
+           background-color: grey;
+       }
         #social img{
             width: 30px;
         }
@@ -88,8 +115,102 @@
             line-height: 30px;
         }
         #leftBottom *{
-            font-size: 18px;
+            /* font-size: 18px; */
             margin-left: 10px;
+        }
+        #btimg{
+            width: 100%;
+        }
+        #clropt{
+         height: 37px;
+         width: 37px;
+         border: 2px solid black;
+         border-radius: 50%;
+         background-color: rgb(29, 89, 185);         
+        }
+        #butn #btn1{
+            background-color: gainsboro;
+            width: 120px;
+            height: 33px;
+            
+
+
+        }
+        #butn #btn1:hover{
+        background-color: black;
+        color: white;
+        }
+        #butn #btn2{
+            background-color: black;
+            color: white;
+            width: 120px;
+            height: 33px;
+           
+        }
+        #butn #btn3{
+            background-color: white;
+            margin-top: 10px;
+            width: 50px; 
+            height: 30px;
+        }
+
+        #butn #btn3>img{
+            background-color: white;
+            width: 60%;
+            margin: auto;
+
+        }
+        #off{
+            border: 1px solid rgb(32, 31, 31);
+            width: 95%;
+            height: 30%;
+            margin-top: 30px;
+        }
+        #outB{
+            border: 1px solid black;
+            height: 40%;
+            width: 95%;
+
+        }
+        #pin{
+         margin-top: 40px;
+        }
+        #pin>input{
+            width: 70%;
+            height: 30px;
+        }
+        #pin>button{
+            width: 20%;
+            height: 35px;
+            color: black;
+            background-color: white;
+            border: 2px solid black;
+            font-weight: bold;
+        }
+        #pin>button:hover{
+            background-color: black;
+            color: white;
+        }
+        #del{
+            margin-top: 60px;
+        }
+        #like{
+            text-align: center;
+        }
+        #btimg{
+            border: 1px solid black;
+            width: 100%;
+            height: 400px;
+        }
+        #btimg>img{
+            width: 100%;
+            height: 100%; 
+        }
+        #del_ret{
+            display: none;
+        }
+        #sellerdet{
+            display: none;
         }
     </style>
 </head>
@@ -116,41 +237,149 @@
               
                <b>SIZE:S</b>
                <div id="size">
-                   <div id="box">S</div>
-                   <div id="box">M</div>
-                   <div id="box">L</div>
-                   <div id="box">XL</div>
+                   <div id="box"><h3>S</h3></div>
+                   <div id="box"><h3>M</h3></div>
+                   <div id="box"><h3>L</h3></div>
+                   <div id="box"><h3>XL</h3></div>
                </div>
+               <p><strong>COLOR: BLUE</strong> </p>
+               <div id="clropt">
+                   
+               </div>
+               <div id="butn">
+                 <button id="btn1">BUY IT NOW</button>
+                 <button id="btn2">ADD TO CART</button>
+                 <button id="btn3">
+                     <img src="https://cdn.icon-icons.com/icons2/931/PNG/128/heart_love_fav_favourite_icon-icons.com_72394.png" alt="">
+                 </button>
+                 <div id="off">
+                    <h1>OFFER</h1>
+                    <p>Get <b style="color: red;"> 5% instant discount </b> on all prepaid   orders. Use Code <b style="color: red;">PREPAID.</b> <br>
+                    Offer applicable over and above promotional T&C
+                                </p>
+                  </div>
+                  <p><b>Availability</b>:In Stock</p>
+               </div>
+
             </div>
         <div id="leftBottom">
             <h1>Product Details</h1>
-            <div id="opt">
-                <button id="btn1">Info & care</button>
-                <button id="btn2">Delivery & Return</button>
-                <button id="btn3">Seller Details</button>
+            <div id="p_box">
+                <div id="opt">
+                    <button id="btn1" onclick="func()">Info & care</button>
+                    <button id="btn2" onclick="funca()">Delivery & Return</button>
+                    <button id="btn3" onclick="funcb()">Seller Details</button>
+                </div>
+                
+               
+    
             </div>
-           <p><b>Product ID :</b> 138466</p> 
-
-           <p> <b>Line ID :</b>155457 </p>   
-
-           <p><b>Material/Fabric :</b>100% Cotton</p> 
- 
-           <p><b>Size & Fit :</b>This brand runs true to size. To ensure the best fit, we suggest consulting the size chart.</p>  
-          <p><b>Casual Shirt</b>  by <b>BLUE SAINT</b></p>  
-
-         <ul>
-            <li>Made from cotton</li>
-            <li>Mandarin collar</li>
-            <li>Button-down closure</li>
-            <li>Welt pocket front</li>
-            <li>Long sleeves</li>
-            <li>Curved hem</li>
-            <li>Slim fit</li>
-         </ul>
-
+            <div id="show_details">
+                <p><b>Product ID :</b> 138466</p> 
+    
+                <p> <b>Line ID :</b>155457 </p>   
+     
+                <p><b>Material/Fabric :</b>100% Cotton</p> 
+      
+                <p><b>Size & Fit :</b>This brand runs true to size. To ensure the best fit, we suggest consulting the size chart.</p>  
+               <p><b>Casual Shirt</b>  by <b>BLUE SAINT</b></p>  
+     
+              <ul>
+                 <li>Made from cotton</li>
+                 <li>Mandarin collar</li>
+                 <li>Button-down closure</li>
+                 <li>Welt pocket front</li>
+                 <li>Long sleeves</li>
+                 <li>Curved hem</li>
+                 <li>Slim fit</li>
+              </ul>
+            </div>
+            <div id="del_ret">
+                <p><b>Product ID :</b> chandan</p> 
+    
+                <p> <b>Line ID :</b>155457 </p>   
+     
+                <p><b>Material/Fabric :</b>100% Cotton</p> 
+      
+                <p><b>Size & Fit :</b>This brand runs true to size. To ensure the best fit, we suggest consulting the size chart.</p>  
+               <p><b>Casual Shirt</b>  by <b>BLUE SAINT</b></p>  
+     
+              <ul>
+                 <li>Made from cotton</li>
+                 <li>Mandarin collar</li>
+                 <li>Button-down closure</li>
+                 <li>Welt pocket front</li>
+                 <li>Long sleeves</li>
+                 <li>Curved hem</li>
+                 <li>Slim fit</li>
+              </ul>
+            </div>
+            <div id="sellerdet">
+                <p><b>Product ID :</b> kapil</p> 
+    
+                <p> <b>Line ID :</b>155457 </p>   
+     
+                <p><b>Material/Fabric :</b>100% Cotton</p> 
+      
+                <p><b>Size & Fit :</b>This brand runs true to size. To ensure the best fit, we suggest consulting the size chart.</p>  
+               <p><b>Casual Shirt</b>  by <b>BLUE SAINT</b></p>  
+     
+              <ul>
+                 <li>Made from cotton</li>
+                 <li>Mandarin collar</li>
+                 <li>Button-down closure</li>
+                 <li>Welt pocket front</li>
+                 <li>Long sleeves</li>
+                 <li>Curved hem</li>
+                 <li>Slim fit</li>
+              </ul>
+            </div>
         </div>
-        <div id="rigthBottom"></div>
+        <div id="rigthBottom">
+            <h1>Delivery Option</h1>
+             <div id="outB">
+                <div id="d_opt">
+
+                    <b>Pincode</b>
+
+                    <div id="pin">
+                        <input type="text" placeholder="Postal code e.g. 414001">
+                        <button>Check</button>
+                    </div>
+                    <p id="del">The Product maybe applicable for free Delivery</p>
+                </div>
+             </div>
+            
+         
+            
+            
+        </div>
+    </div>
+       <div id="like"> <h1>You may also like</h1></div> 
+    <div id="btimg">
+       <img src="./btimg.jpg" alt="">
     </div>
     
 </body>
 </html>
+<script>
+    function func(){
+        document.querySelector("#show_details").style.display="block"
+        document.querySelector("#del_ret").style.display="none"
+        document.querySelector("#sellerdet").style.display="none"
+    }
+    function funca(){
+        document.querySelector("#show_details").style.display="none"
+        document.querySelector("#del_ret").style.display="block"
+        document.querySelector("#sellerdet").style.display="none"
+    }
+    function funcb(){
+        document.querySelector("#show_details").style.display="none"
+        document.querySelector("#del_ret").style.display="none"
+        document.querySelector("#sellerdet").style.display="block"
+    }
+    
+   
+
+   
+</script>
