@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="productpage.css">
+</head>
+<body>
+    
+    <div class="Shirtsmen">
+       <p>Shirts Men</p> 
+    </div>
+    <div class="sort">
+        <div>Products</div>
+        
+           <div>
+             <select name="sort" id="Sorting">
+               <option value="">Sort By</option>
+               <option value="high">Price Low to High</option>
+               <option value="low">Price High to Low</option>
+             </select>
+           </div>
+               
+        </div>
+    </div>
+    <hr>
+    <div id="container">
+        <div class="filters">
+            <h3>BRAND</h3>
+            <div>
+                <label for="BLUE SAINT">
+                  <input class="chSize"
+                    value="BLUE SAINT"
+                    type="checkbox"
+                    name="BLUE SAINT"
+                    id="BLUE SAINT"
+                  />
+                  <span>BLUE SAINT</span> </label
+                ><br />
+              </div>
+              <div>
+                <label for="KOOVS">
+                  <input class="chSize"
+                    value="KOOVS"
+                    type="checkbox"
+                    name="KOOVS"
+                    id="KOOVS"
+                  />
+                  <span>KOOVS</span> </label
+                ><br />
+              </div>
+              <div>
+                <label for="OXOLLOXO">
+                  <input class="chSize"
+                    value="OXOLLOXO"
+                    type="checkbox"
+                    name="OXOLLOXO"
+                    id="OXOLLOXO"
+                  />
+                  <span>OXOLLOXO</span> </label
+                ><br />
+              </div>
+              <div>
+                <label for="AMON">
+                  <input class="chSize"
+                    value="AMON"
+                    type="checkbox"
+                    name="AMON"
+                    id="AMON"
+                  />
+                  <span>AMON</span> </label
+                ><br />
+              </div>
+              <h3>COLOR</h3>
+              <button class="black"></button>
+              <button class="grey"></button>
+              <button class="indigo"></button>
+              <button class="blue"></button>
+              <br>
+              <button class="red"></button>
+              <button class="orange"></button>
+              <button class="green"></button>
+              <button class="khaki"></button>
+              <br>
+              <button class="brown"></button>
+              <button class="yellow"></button>
+              <h3>SIZE</h3>
+              <div class="sizeFilter">
+                <button id="large">L</button>
+                <br><br>
+                <button id="medium">M</button>
+                <br><br>
+                <button id="small">S</button>
+                <br><br>
+                <button id="xlarge">XL</button>
+
+              </div>
+            
+             
+
+        </div>
+       
+        <div class="grid">
+           
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     let shirtsData=[
+        {    
+            brand:"BLUE SAINT",
+            color:"grey",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/158440_82a971f7379f4da9b97e695b2ad4a272_front_zoom_360x.jpg?v=1631101307",
+            title:"Dark Wash Skinny jeans",
+            price:500,
+            cutprice:999,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            color:"indigo",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/158438_4881c934195b43eaa84821a2b9d453ff_front_zoom_360x.jpg?v=1631101203",
+            title:"Light Wash Slim Jeans",
+            price:500,
+            cutprice:999,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            color:"blue",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_2851_360x.jpg?v=1634749593",
+            title:"Realm Men Olive Blue Slim Fit Jeans",
+            price:  1649,
+            cutprice: 2199 ,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            color:"indigo",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/158477_16d3d276ec0246ce8f21e4d750f06ac5_front_zoom_360x.jpg?v=1636354382",
+            title:"Dark-Wash Skinny Fit Jeans",
+            price: 500,
+            cutprice:1299,
+
+        },
+        {    
+            brand:"BLUE SAINT",
+            color:"orange",
+            size:"x",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/160767_316ea4b395994b21882b99854dd68d8d_front_zoom_360x.jpg?v=1629889060",
+            title:"Basic Slim Fit Jeans",
+            price: 520,
+            cutprice:1599 ,
+
+        },
+        {    
+            brand:"KOOVS",
+            color:"black",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_3147_360x.jpg?v=1634749592",
+            title:"Realm Men Blue Slim Fit Distressed Jeans",
+            price: 1604,
+            cutprice:2299 ,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/156799_45c34e355b9f4fed8c5b2cb9e9b8e204_front_zoom_360x.jpg?v=1629888705",
+            title:"Realm Men Blue Slim Fit Distressed jeans",
+            price:760 ,
+            cutprice:1899,
+
+        },
+        {    
+            brand:"KOOVS",
+            color:"grey",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/155853_a8818451d50e4b0fbc9d345ee002337c_front_zoom_360x.jpg?v=1629887954",
+            title:"Stripe Down slim fit jeans",
+            price:760 ,
+            cutprice:1899,
+
+        },
+        {    
+            brand:"KOOVS",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/162881_9c027770f8f042549e41b15833477eea_front_zoom_360x.jpg?v=1629889815",
+            title:"Multi Flora blur slim Distressed jeans",
+            price:720,
+            cutprice:1299 ,
+
+        },
+        {    
+            brand:"KOOVS",
+            color:"blue",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_2723_180x.jpg?v=1634749594",
+            title:"Impackt Mid Rise Skinny Fit Jeans",
+            price:899 ,
+            cutprice:1499 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"black",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167333_0b49ece315814668808384961a465bae_front_zoom_c537f07e-9728-4379-bfcb-ee708c246614_360x.jpg?v=1627497706",
+            title:"Button-Down Oversized Fit Shirt",
+            price:1000 ,
+            cutprice: 1999,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"orange",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167316_8f7843714c2d4cbbaeb9a22e0ed3fa71_front_zoom_180x.jpg?v=1631100453",
+            title:"Side Tape Slim Fit Jeans",
+            price:760 ,
+            cutprice:1899 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"blue",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/169627_4a761c015faf431eab3b080cfbb2516e_left_zoom_80da2a3c-c146-418e-913d-894b84191c6a_360x.jpg?v=1640616016",
+            title:"Polka Dot Casual Shirt",
+            price:600 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"grey",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/165847_5e51bbb12ea7461d904cd38af7383ee7_front_zoom_180x.jpg?v=1629890310",
+            title:"Mid-Wash Side Tape Regular Jeans",
+            price:870,
+            cutprice:1899 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"grey",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/0U9A2321_ba42ae9e-2691-4348-8534-53a760d10463_360x.jpg?v=1634749624",
+            title:"Catllastic Crey Casual Mens Shirt",
+            price:899,
+            cutprice:1499 ,
+
+        },
+        {    
+            brand:"AMON",
+            color:"red",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/165224_3fd48f0615ab4b368988d691fa45eb5e_front_zoom_180x.jpg?v=1629890542",
+            title:"Basic Skinny Jeans",
+            price:900 ,
+            cutprice:1999,
+
+        },
+        {    
+            brand:"AMON",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167340_8bfdac482aa8400981813e4c477c17e4_front_zoom_180x.jpg?v=1631099980https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167340_8bfdac482aa8400981813e4c477c17e4_front_zoom_180x.jpg?v=1631099980",
+            title:"Elasticated Waist Utility Pocket Jeans",
+            price:1199,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            color:"red",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_2920_180x.jpg?v=1634749592",
+            title:"Blue Slim Fit Jeans",
+            price:900,
+            cutprice:999,
+
+        },
+        {    
+            brand:"AMON",
+            color:"orange",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/165851_3e2b47b3d2344cce94790298ac8d7eeb_front_zoom_180x.jpg?v=1629890292",
+            title:"Acid Wash Panelled Front Slim Jeans",
+            price:1199 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            color:"indigo",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167303_0f6ce74154714e52880e187f8245ecd1_front_zoom_180x.jpg?v=1631100076",
+            title:"Dark Wash Text Patch Jeans",
+            price:1000 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"red",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/169627_4a761c015faf431eab3b080cfbb2516e_left_zoom_80da2a3c-c146-418e-913d-894b84191c6a_360x.jpg?v=1640616016",
+            title:"Polka Dot Casual Shirt",
+            price:600 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/165847_5e51bbb12ea7461d904cd38af7383ee7_front_zoom_180x.jpg?v=1629890310",
+            title:"Mid-Wash Side Tape Regular Jeans",
+            price:870,
+            cutprice:1899 ,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/0U9A2321_ba42ae9e-2691-4348-8534-53a760d10463_360x.jpg?v=1634749624",
+            title:"Catllastic Crey Casual Mens Shirt",
+            price:899,
+            cutprice:1499 ,
+
+        },
+        {    
+            brand:"AMON",
+            color:"indigo",
+            size:"s",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/160766_7cde49ba305744e394f6db5bb625f89c_front_zoom_180x.jpg?v=1629889009",
+            title:"Basic Skinny Jeans",
+            price:900 ,
+            cutprice:1999,
+
+        },
+        {    
+            brand:"AMON",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_1749_180x.jpg?v=1634749593",
+            title:"Acid Wash Regular Fit Jeans",
+            price:1199,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            color:"indigo",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_2920_180x.jpg?v=1634749592",
+            title:"Blue Slim Fit Jeans",
+            price:900,
+            cutprice:999,
+
+        },
+        {    
+            brand:"AMON",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/0U9A0999_180x.jpg?v=1634749629",
+            title:"Acid Wash Panelled Front Slim Jeans",
+            price:1199 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            color:"red",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/167367_10f5cf69a18a4afe9d4278748044dc6b_front_zoom_180x.jpg?v=1631100332",
+            title:"Dark Wash Text Patch Jeans",
+            price:1000 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            color:"indigo",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/160763_67c64050e39a44fbb48d0beb57a20c12_front_zoom_180x.jpg?v=1629889081",
+            title:"Dark Wash Text Patch Jeans",
+            price:1000 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            color:"red",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/IMG_7794_180x.jpg?v=1634749632",
+            title:"Dark Wash Text Patch Jeans",
+            price:1000 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"AMON",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/169419_4277ce57be804244a9d8cd2c1b778206_front_zoom_180x.jpg?v=1631100347",
+            title:"Dark Wash Text Patch Jeans",
+            price:1000 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"OXOLLOXO",
+            color:"indigo",
+            size:"l",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/169627_4a761c015faf431eab3b080cfbb2516e_left_zoom_80da2a3c-c146-418e-913d-894b84191c6a_360x.jpg?v=1640616016",
+            title:"Polka Dot Casual Shirt",
+            price:700 ,
+            cutprice:1499,
+
+        },
+        {    
+            brand:"KOOVS",
+            color:"blue",
+            size:"m",
+            imgurl:"https://cdn.shopify.com/s/files/1/0584/9399/3141/products/156799_45c34e355b9f4fed8c5b2cb9e9b8e204_front_zoom_360x.jpg?v=1629888705",
+            title:"Realm Men Blue Slim Fit Distressed jeans",
+            price:860 ,
+            cutprice:1899,
+
+        },
+    ]
+
+        AppendShirts(shirtsData);
+    function AppendShirts(arr){
+        document.querySelector(".grid").innerHTML=null;
+       arr.map((el)=>{
+           let div1=document.createElement("div");
+           let img=document.createElement("img");
+           img.src=el.imgurl;
+           let title=document.createElement("p");
+           title.textContent=el.title;
+           let brand=document.createElement("p");
+           brand.textContent=el.brand;
+           let price=document.createElement("p");
+           price.textContent="₹"+el.price;
+           price.style.display="inline-block";
+           let cutprice=document.createElement("p");
+           cutprice.textContent="₹"+el.cutprice;
+           cutprice.style.display="inline-block";
+           let img1=document.createElement("img");
+           img1.setAttribute("class","circleimage");
+            img1.src=el.imgurl;
+        // let span=document.createElement("span");
+        // span.style.backgroundImage="url(el.imgurl)";
+        // console.log(span);
+        let div2=document.createElement("div");
+        div2.append(img1)
+           div1.append(img,title,brand,price,cutprice,div2);
+           
+           document.querySelector(".grid").append(div1);
+       });
+    }
+
+
+    // filter BLUE SAINT BRAND
+    let bluesaint=0;
+    document.getElementById("BLUE SAINT").addEventListener("click", BLUESAINTbrand);
+function BLUESAINTbrand() {
+  var arr = shirtsData;
+      bluesaint++;
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("BLUE SAINT").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  if(bluesaint%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData)
+  }
+}
+// filter koovs BRAND
+  let koovs=0;
+document.getElementById("KOOVS").addEventListener("click", KOOVSbrand);
+function KOOVSbrand() {
+  var arr = shirtsData;
+  koovs++;
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("KOOVS").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  if(koovs%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData)
+  }
+}
+// filter for OXOLLOXO BRAND
+let count=0;
+document.getElementById("OXOLLOXO").addEventListener("click", OXOLLOXObrand);
+function OXOLLOXObrand() {
+  var arr = shirtsData;
+       count++;
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("OXOLLOXO").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  if(count%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+
+// filter for AMON BRAND
+let amon=0;
+document.getElementById("AMON").addEventListener("click", AMONbrand);
+function AMONbrand() {
+  var arr = shirtsData;
+         amon++;
+  var arr = arr.filter(function (elem) {
+    
+    var temp1 = elem.brand;
+    let value= document.getElementById("AMON").value;
+    for (var i = 0; i < arr.length; i++) {
+      if (value == temp1) {
+        return elem;
+      }
+    }
+  });
+  console.log(arr);
+  if(amon%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+
+// FILTER FOR LARGE SIZE
+let l=0;
+document.getElementById("large").addEventListener("click",large);
+
+function large(){
+  l++;
+  let arrlarge=shirtsData.filter((el)=>{
+    return el.size=="l";
+  })
+  if(l%2==1){
+  AppendShirts(arrlarge);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+// FILTER FOR MEDIUM SIZE
+let m=0;
+document.getElementById("medium").addEventListener("click",medium);
+function medium(){
+  m++;
+  let arr1=shirtsData.filter((el)=>{
+    return el.size=="m";
+  })
+  if(m%2==1){
+  AppendShirts(arr1);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+
+ }
+//  FILTER FOR SMALL SIZE 
+let s=0;
+document.getElementById("small").addEventListener("click",small);
+function small(){
+  s++;
+  let arrsmall=shirtsData.filter((el)=>{
+    return el.size=="s";
+  })
+  if(s%2==1){
+  AppendShirts(arrsmall);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+// FILTER FOR BLACK COLOR
+let cblack=0;
+document.querySelector(".black").addEventListener("click",black);
+function black(){
+  cblack++;
+  let arr=shirtsData.filter((el)=>{
+    return el.color=="black";
+  })
+  if(cblack%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+// FILTER FOR GREY COLOR
+let cgrey=0;
+document.querySelector(".grey").addEventListener("click",greyColor);
+function greyColor(){
+  cgrey++;
+  let arr=shirtsData.filter((el)=>{
+    return el.color=="grey";
+  })
+  if(cgrey%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+// FILTER FOR INDIGO COLOR
+let cindigo=0;
+document.querySelector(".indigo").addEventListener("click",indigoColor);
+function indigoColor(){
+  cindigo++;
+  let arr=shirtsData.filter((el)=>{
+    return el.color=="indigo";
+  })
+  if(cindigo%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+// FILTER FOR BLUE COLOR
+let cblue=0;
+document.querySelector(".blue").addEventListener("click",blueColor);
+function blueColor(){
+  cblue++;
+  let arr=shirtsData.filter((el)=>{
+    return el.color=="blue";
+  })
+  if(cblue%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+ //FILTER FOR BLUE COLOR
+let corange=0;
+document.querySelector(".orange").addEventListener("click",orangeColor);
+function orangeColor(){
+  corange++;
+  let arr=shirtsData.filter((el)=>{
+    return el.color=="orange";
+  })
+  if(corange%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+//FILTER FOR RED COLOR
+let cred=0;
+document.querySelector(".red").addEventListener("click",redColor);
+function redColor(){
+  cred++;
+  let arr=shirtsData.filter((el)=>{
+    return el.color=="red";
+  })
+  if(cred%2==1){
+  AppendShirts(arr);
+  }
+  else{
+    AppendShirts(shirtsData);
+  }
+}
+
+document.getElementById("Sorting").addEventListener("change",sortprice);
+
+function sortprice(){
+  let value=document.getElementById("Sorting").value;
+  let arr=shirtsData;
+  if(value==="high"){
+    arr=arr.sort((a,b)=>{
+      console.log(a.price);
+      return a.price-b.price;
+    });
+  }
+  else if(value==="low"){
+    arr=arr.sort((a,b)=>{
+      return b.price-a.price;
+    });
+  }
+  AppendShirts(arr);
+}
+
+// function sort(){
+//         var selected = document.getElementById("sort").value;
+//         var all = laptopList;
+//         if(selected == "low"){
+//             all = all.sort(function(a, b){
+//                 // console.log(a, b)
+//                 return a.originalP - b.originalP
+//             })
+//         }
+//         if(selected == "high"){
+//             all = all.sort(function(a, b){
+//                 // console.log(a, b)
+//                 return b.originalP - a.originalP
+//             })
+//         }
+</script>
