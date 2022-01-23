@@ -42,15 +42,19 @@
             border-radius: 10px;
         }
         .maindiv{
-            display: flex;
-            line-height: 0px;
-            
-           
-            
+            display: flex;   
         }
+       
+
         .namedetaildiv{
             margin-left: 10px;
             width: 65%;
+        }
+        .namedetaildiv p{
+            margin: 0px;
+        }
+        .namedetaildiv h4{
+            margin: 0px;
         }
         .inside{
             margin-left: 8%;
@@ -105,6 +109,7 @@
             font-size: 11px;
             position: relative;
             bottom: 2px;
+            color: blue;
             
         }
         #pages{
@@ -133,6 +138,13 @@
             "Phone Phone"
             
         }
+        .bottomvar>select{
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gainsboro;
+            color: #393939;
+
+        }
         .bottomvar>input{
             padding: 10px;
             border-radius: 5px;
@@ -160,9 +172,38 @@
             margin-top: 20px;
             padding: 10px 0px;
             font-size: 11px;
-            border-top: 1px solid gray;
+            border-top: 1px solid gainsboro;
         }
-       
+        #gotoship:hover{
+            background-color: gray;
+        }
+        @media only screen and (max-width: 480px){
+            .container{
+                display: flex;
+                flex-direction: column;
+            }
+            .left{
+                width: 100%;
+            }
+            .right{
+                width: 100%;
+            }
+            #reserve{
+                display: none;
+            }
+            #kooImg img{
+                width: 170px;
+                
+                margin-left: 3%;
+            
+        
+            }
+            .insidel{
+                width: 75%;
+                margin-left: 9%;
+
+            }
+        }
     </style>
 </head>
 <body>
@@ -173,33 +214,54 @@
             </div>
             <div class="insidel">
                 <div id="pages">
-                    <p><a href="">Cart</a> > <a href="">Information</a> > <a href="">Shipping</a> > <a href="">Payment</a></p>
+                    <p><a href="./cart.html">Cart</a> > <a href="./checkout.html"><strong style="color: black;">Information</strong></a> > <a href="./shipping.html">Shipping</a> > <a href="./payment.html">Payment</a></p>
                 </div>
                 <p id="cont">Contact information</p>
                 <div style="display: flex;">
                     <img src="./images/Screenshot (262).png" alt="id" style="width: 50px;">
                     <span style="font-size: 12px; margin-top: 5px;margin-left: 10px;">Chandan (chandankrbit3@gmail.com)</span>
                 </div>
-                <span style="font-size: 12px; position: relative; left: 12%;bottom: 5vh;color: blue;">Logout</span>
-                <div style="margin: 10px 0px;">shipping address</div>
+        
+                <div style="margin-top: 25px; margin-bottom: 10px;">shipping address</div>
                 <div class="bottomvar">
-                    <input id="Email" placeholder="Country/region" style="grid-area:Email ;">
+                    
+                    <select name="" id="Email" style="grid-area: Email;">
+                        <option value="india">India</option>
+                    </select>
                     <input id="Fname" placeholder="First Name" style="grid-area:Fname;">
                     <input id="Lname" placeholder="Last Name" style="grid-area:Lname ;">
                     <input id="comp" placeholder="Company(optional)" style="grid-area: comp;">
                     <input id="Address" placeholder="Address" style="grid-area:Address ;">
                     <input id="Add2" placeholder="Address 2 (Optonal)" style="grid-area:Add2 ;">
-                    <input id="PC" placeholder="Postal Code" style="grid-area:PC;">
+                    <input id="PC" placeholder="Postal Code" style="grid-area:PC;" type="number">
                     <input id="City" placeholder="City" style="grid-area:City ;">
-                    <input id="Region" placeholder="Region (Optonal)" style="grid-area:Region;">
-                    <input id="Phone" placeholder="Phone" style="grid-area:Phone ;">
+                    
+                    <select id="Region" style="grid-area:Region;" >
+                        <option value="">State</option>
+                        <option value="">Jharkhand</option>
+                        <option value="">Bihar</option>
+                        <option value="">Uttar Pradesh</option>
+                        <option value="">Chattishgard</option>
+                        <option value="">Odissa</option>
+                        <option value="">Hydrabad</option>
+                        <option value="">Banglore</option>
+                        <option value="">Goa</option>
+                        <option value="">Maharastra</option>
+                        <option value="">Gujrat</option>
+                        <option value="">Jammu & Kashmir</option>
+                        <option value="">Laddak</option>
+                        <option value="">Punjab</option>
+                        <option value="">Haryana</option>
+                        <option value="">Madhya prasesh</option>
+                    </select>
+                    <input id="Phone" placeholder="Phone" style="grid-area:Phone ;" type="number">
                     
                 </div>
                 <input type="checkbox" style="position: relative; top: 3px;">
                 <span style="font-size: 12px;">Text me with news and offers</span>
                 <div id="butts">
                     <a href="./cart.html"><p style="position:relative; top:30px">Return to cart</p></a>
-                    <a href="./shipping.html"><button>Continue to Shipping</button></a>
+                    <button id="gotoship">Continue to Shipping</button>
                 </div>
                 <div id="reserve">
                     <div>All rights reserved Koovs</div>
@@ -237,11 +299,19 @@
             
         </div>
     </div>
-
-    
 </body>
 </html>
+
 <script>
+     document.querySelector("#gotoship").addEventListener("click",function(){
+        if(document.querySelector("#Email").value == "" ||document.querySelector("#Fname").value == ""  ||document.querySelector("#Lname").value == ""||document.querySelector("#Address").value == ""  ||document.querySelector("#PC").value == ""||document.querySelector("#City").value == ""  ||document.querySelector("#Phone").value == ""){
+            alert("Please Enter All Data")
+        }
+        else{
+            window.location.href="./shipping.html"
+        }
+    })     
+   
      document.querySelector("#sum").textContent="₹ "+localStorage.getItem("sumtotal")
      var totalsum=localStorage.getItem("sumtotal")
      var addit=99;
@@ -264,7 +334,7 @@
 
 
         var img=document.createElement("img")
-        img.setAttribute("src",elem.imgUrl)
+        img.setAttribute("src",elem.imgurl)
         imgdiv.append(img)  
        
         var namedetail=document.createElement("div")
@@ -274,14 +344,18 @@
        
         var prodname=document.createElement("p")
         prodname.innerHTML=elem.name
+        prodname.style.color="black"
+        
         
         var prodcolor=document.createElement("h4")
         prodcolor.innerHTML=elem.color+"/"+elem.size;
-        prodcolor.style.fontSize="14px"
+        prodcolor.style.fontSize="12px"
         prodcolor.style.color="gray"
         prodcolor.style.fontWeight="200"
 
         namedetail.append(prodname,prodcolor)
+    
+        
 
         
         var pricediv=document.createElement("div")
@@ -293,5 +367,6 @@
         document.querySelector(".prod").append(maindiv)
 
         
-     })                     
+     })    
+                
 </script>

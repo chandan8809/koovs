@@ -44,7 +44,7 @@
         }
         .maindiv{
             display: flex;
-            line-height: 0px;
+        
             
            
             
@@ -107,6 +107,7 @@
             font-size: 11px;
             position: relative;
             bottom: 2px;
+            color: blue;
             
         }
         #pages{
@@ -139,22 +140,23 @@
             margin-top: 15vh;
             padding: 10px 0px;
             font-size: 11px;
-            border-top: 1px solid gray;
+            border-top: 1px solid gainsboro;
         }
-        #div1{
+        .div1{
             width: 94%;
-            height: 10vh;
-            border: 1px solid gray;
+            display: flex;
+            flex-grow: 1;
+            gap: 20px;
+            border: 1px solid gainsboro;
             font-size: 13px;
             padding: 15px;
             border-radius: 5px;
-            
-
         }
+        
         #div2{
             width: 94%;
             height: auto;
-            border: 1px solid gray;
+            border: 1px solid gainsboro;
             font-size: 14px;
             padding: 0px 15px;
             
@@ -163,23 +165,42 @@
             justify-content: space-between;
             
         }
-        #div1 hr{
-            margin-top: 2vh;
-            margin-bottom: 2vh;
+        #gotoship:hover{
+            background-color: gray;
         }
-        #div1 span{
-            display: inline-block;
+        .namedetaildiv p{
+            margin: 0px;
+        }
+        .namedetaildiv h4{
+            margin: 0px;
+        }
+        @media only screen and (max-width: 480px){
+            .container{
+                display: flex;
+                flex-direction: column;
+            }
+            .left{
+                width: 100%;
+            }
+            .right{
+                width: 100%;
+            }
+            #reserve{
+                display: none;
+            }
+            #kooImg img{
+                width: 170px;
+                
+                margin-left: 3%;
             
+        
+            }
+            .insidel{
+                width: 75%;
+                margin-left: 9%;
+
+            }
         }
-        #email{
-            width: 73.5%;
-            margin-left: 5%;
-        }
-        #address{
-            width: 73.5%;
-            margin-left: 6.7%;
-        }
-      
 
        
     </style>
@@ -192,14 +213,14 @@
             </div>
             <div class="insidel">
                 <div id="pages">
-                    <p><a href="">Cart</a> > <a href="">Information</a> > <a href="">Shipping</a> > <a href="">Payment</a></p>
+                    <p><a href="./cart.html">Cart</a> > <a href="./checkout.html">Information</a> > <a href="./shipping.html"><strong style="color: black;">Shipping</strong></a> > <a href="./payment.html">Payment</a></p>
                 </div>
                 <div class="bottomvar">
-                    <div id="div1">
-                        <span>Contact</span><span id="email">chandankrbit3</span><span>Change</span>
-                        <hr>
-                        <span>Ship to</span><span id="address">Address</span><span>Change</span>
-
+                    <div class="div1">
+                        <span >Contact</span><span id="email" style="flex-grow: 3;" >chandankrbit3</span><span style="font-size: 11px; color: blue;" >Change</span>
+                    </div>
+                    <div class="div1">
+                        <span style="width: 54px;">Ship to</span><span id="address" style="flex-grow: 3;">Address</span><span style="font-size: 11px; color: blue;" >Change</span>
                     </div>
                     <p>Shipping method</p>
                     <div id="div2">
@@ -213,7 +234,7 @@
     
                 <div id="butts">
                     <a href="./checkout.html"><p style="position:relative; top:30px">Return to Information</p></a>
-                    <a href="./payment.html"> <button>Continue to Payment</button></a>
+                    <a href="./payment.html"> <button id="gotoship">Continue to Payment</button></a>
                 </div>
                 <div id="reserve">
                     <div>All rights reserved Koovs</div>
@@ -278,7 +299,7 @@
 
 
         var img=document.createElement("img")
-        img.setAttribute("src",elem.imgUrl)
+        img.setAttribute("src",elem.imgurl)
         imgdiv.append(img)  
        
         var namedetail=document.createElement("div")
@@ -288,14 +309,16 @@
        
         var prodname=document.createElement("p")
         prodname.innerHTML=elem.name
+        prodname.style.color="black"
         
         var prodcolor=document.createElement("h4")
         prodcolor.innerHTML=elem.color+"/"+elem.size;
-        prodcolor.style.fontSize="14px"
+        prodcolor.style.fontSize="12px"
         prodcolor.style.color="gray"
         prodcolor.style.fontWeight="200"
 
         namedetail.append(prodname,prodcolor)
+    
 
         
         var pricediv=document.createElement("div")
