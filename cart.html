@@ -8,229 +8,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            font-family: 'Poppins', sans-serif;
-            color: #393939;
-
-        }
-        .container{
-            width: 96%;
-            border: 1px solid transparent;
-            color: #393939;
-            
-            margin: auto;
-            font-family: 'Poppins', sans-serif;
-        }
-        .mybag{
-            width: 100%;
-            height:65px;
-            border: 1px solid transparent;
-            text-align: center;
-            font-size: 22px;
-            font-weight: 600;
-            color: black;
-        }
-        .container div{
-            border: 1px solid transparent;
-        }
-        .bodydiv{
-            display: flex;
-        }
-        .productdiv{
-            width: 69%;
-            height: auto
-        }
-        .pricedivR{
-            width: 31%;
-            height: auto;
-            padding: 20px 10px;
-            line-height: 8px;
-        }
-        #static{
-            display: flex;
-            color: black;
-        }
-        #static>:nth-child(1){
-            flex: 4;
-        }
-        #static>:nth-child(2){
-            flex: 1;
-        }
-        #static>:nth-child(3){
-            flex: 2;
-        }
-        #static>:nth-child(4){
-            flex: 1;
-        }
-        .maindiv{
-            display: flex;
-            height: 150px;
-            margin: 20px 0px;
-        }
-      
-        .maindiv img{
-            height: 160px;
-        }
-        .imgdiv{
-            flex: 1;
-
-        }
-        .contentdiv{
-            flex: 3;
-        }
-        .qtydiv{
-            flex: 2;
-            display: grid;
-            align-items: center;
-        }
-        .qtydiv>div{
-            border: 1px solid black;
-            width: 75px;
-            padding: 5px 10px;
-            font-size: 20px;
-        }
-        .qtydiv>div:hover{
-            cursor: pointer;
-        }
-        .pricediv{
-            display: grid;
-            align-items: center;
-            flex: 1;
-    
-            
-        }
-        #totalprice{
-            display: grid;
-            align-items: center;
-            flex: 1;
-        }
-        .namedetaildiv{
-            
-            height: 90px;
-            font-size: 15px;
-            line-height: 5px;
-        }
-        .namedetaildiv>h3{
-            font-size: 14px;
-            color: gray;
-            font-weight: 300;
-            line-height: 0px;
-        }
-        .maindiv>div{
-            height: 100%;
-        }
-        hr{
-            margin-top: 30px;
-        }
-        #static{
-            padding: 3px;
-            border-bottom: 1px solid gray;
-        }
-        .contentdiv{
-            padding-left: 10px;
-            padding-top: 20px;
-        }
-        #static:nth-child(1){
-            padding-left: 0px;
-        }
-        #padd{
-            padding-left: 25px;
-        }
-        .pricedivR p{
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .pricedivR h4{
-            font-size: 14px;
-            font-weight: 400;
-        }
-        .pricedivR button{
-            padding: 10px 80px ;
-            margin-top: 12px;
-            color: white;
-            background-color: black;
-            border: 1px solid transparent;
-        }
-        .pricedivR button:hover{
-            background-color: gray
-        }
-        
-       
-        .bottomdiv{
-            width: 100%;
-            display: flex;
-            border: .5px solid gray;
-            justify-content: center;
-            gap: 3%;
-            padding: 40px 0px;
-            margin-top: 0px;
-            position: relative;
-            bottom: 50px;
-
-
-        }
-        .bottomdiv div{
-            border: 1px solid transparent;
-            width: 22%;
-
-        }
-        #selectcty{
-            padding: 8px;
-            width: 100%;
-        }
-        .bottomdiv p{
-            margin-bottom: 0px;
-        }
-        .bottomdiv button{
-            width: 100%;
-            padding: 8px;
-            margin-top: 35px;
-            background-color: black;
-            border: 1px solid transparent;
-            color: white;
-            z-index: 2;
-            
-    
-
-        }
-        .estimate{
-            width: 96%;
-            font-size: 23px;
-            text-align: center;
-            z-index: 1;
-        }
-        .estimate>div{
-            position: relative;
-            left: 2.5%;
-            bottom: 5vh;
-            z-index: 1;
-            padding: 10px;
-            color: black;
-            
-        }
-        .hidden{
-            border-bottom: 1px solid black;
-            margin-top: -40px;
-            text-align: center;
-            
-
-            display: none; 
-        }
-        #cal:hover{
-            background-color: gray;
-        }
-        #selectcty{
-            border: .2px solid gainsboro;
-        }
-
-        
-      
-        
-
-    </style>
+    <script
+      src="https://kit.fontawesome.com/dfa13a6531.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href ="./styles/home.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/cart.css">
 </head>
 <body>
+    <!-- /* .............header...... */ -->
+    <div id="main">
+        <a href="index.html"
+          ><img
+            id="logo"
+            src="https://cdn.shopify.com/s/files/1/0584/9399/3141/files/logo_240x.png?v=1627043663"
+        /></a>
+        <div id="icon">
+          <a href=""><i class="fas fa-search"></i></a>
+          <a href="signin.html"><i class="far fa-user-circle"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+          <a href=""><i class="fas fa-shopping-bag"></i></a>
+        </div>
+      </div>
+      <div id="nav1">
+        <a href="product.html"><p1 id="txt">MEN</p1></a>
+        <a href=""><p1 id="txt">WOMEN</p1></a>
+        <a href=""><p1 id="txt">THE BLOG</p1></a>
+        <a href=""><p1 id="txt">KOOVSXYOU</p1></a>
+        <a href=""><p1 id="txt">IN STYLE OF</p1></a>
+      </div>
+      <!-- .............header......  -->
     <div class="headerdiv"></div>
     <div class="container">
         <div class="mybag">MY BAG</div>
@@ -287,7 +95,7 @@
             
         </div>
         <div>
-            <button id="cal">CALCULATE SHIPPING</button>
+            <button id="cal" style="padding: 12px 0px;">CALCULATE SHIPPING</button>
         </div>
 
 
@@ -296,213 +104,80 @@
         <p>We found one shipping rate available for your location<br>*Standard Shipping at ₹ 99*</p>
     </div>
     
+    <div class="foot">
+        <div class="foot-column">
+           <ul>
+               <li><label class="head">Customer Service</label></li>
+               <li>Contact Us</li>
+               <li>Order Status</li>
+               <li>Shipping</li>
+               <li>Returns & amp;exchanges</li>
+               <li>Shipping</li>
+               <li>Product recalls</li>
+           </ul>
+        </div>
+        <div class="foot-column">
+              <ul>
+                  <li><label class="head">
+                      Stores & amp: Events
+                  </label>
+                  </li>
+                  <li> Stores & amp: Events</li>
+                  <li>Carrers</li>
+                  <li>Corporate Resposibility</li>
+                  <li>Diversity Including & amp: Belonging</li>
+                  <li>Get Email Updates</li>
+                  <li>Koovs Blog</li>
+              </ul>
+        </div>
+        <div class="foot-column">
+          <ul>
+              <li><label class="head">Service</label></li>
+              <li>Personal Styling</li>
+              <li>Alteration & amp: Tailering</li>
+              <li>Spa Koovs</li>
+              <li>Koovs Restuarant</li>
+              <li> Gift Cards</li>
+          </ul>
+        </div>
+        <div class="foot-column">
+          <ul>
+              <li><label class="head">Koovs Cards</label></li>
+              <li>Pay My Bill</li>
+              <li>Manage my Koovs Cards</li>
+          </ul>
+        </div>
+        <div class="foot-column">
+         <ul>
+             <li><label class="head">Koovs Inc</label></li>
+             <li>Koovs Rack</li>
+             <li>Koovs Canada</li>
+             <li>Trunk Club</li>
+             <li>Investor Relations</li>
+             <li>Press Release</li>
+         </ul>
+        </div>
+      
+    <div class="foot-col">
+        <ul>
+            <li style="padding:5px"><img src="./images/mobile.svg" alt="facebook" style="width:18px;margin-right:0px;padding:5px"/>Get our apps</li>
+            <div style="display:flex;gap:15px;margin-top: 20px;">
+                <img src="./images/insta.svg" alt="facebook" style="width:24px;"/>
+                <img src="./images/pin.svg" alt="facebook" style="width:24px;"/>
+                <img src="./images/twitter.svg" alt="facebook" style="width:24px;"/>
+                <img src="./images/fb.svg" alt="facebook" style="width:24px;"/>
+            </div>
+        <ul>
+    </div>
+    </div>
+    <div class="foot">
+        <p>Your Privacy Rights</p>
+        <p>Dont Sell My Info</p>
+        <p>Terms & amp; Conditions</p>
+        <p>Intrest Based Ads</p>
+        <p>copy & 2021 Koovs,Inc</p>
+    </div>
+    
 </body>
 </html>
-<script>
-    document.querySelector("#checkout").addEventListener("click",function(){
-        setTimeout(function(){
-            window.location.href="./checkout.html"
-
-        },200)
-       
-    })
-    document.querySelector("#cal").addEventListener("click",function(){
-        setTimeout(function(){
-            document.querySelector(".hidden").style.display="block"
-
-        },500)
-       
-   
-
-    })
-   
-    var bagc=JSON.parse(localStorage.getItem("bag")) 
-    console.log(bagc)
-
-   
-    var holdprice=bagc.map(function(elem){
-       return Math.floor(elem.price)
-
-    })
-    console.log(holdprice)
-
-    function displaycontent(bagc){
-
-    bagc.map(function(elem,index){
-        var maindiv=document.createElement("div")
-        maindiv.className="maindiv";
-        var imgdiv=document.createElement("div")
-        imgdiv.className="imgdiv";
-        var contentdiv=document.createElement("div");
-        contentdiv.className="contentdiv"
-        var qtydiv=document.createElement("div")
-        qtydiv.className="qtydiv"
-        var pricediv=document.createElement("div")
-        pricediv.className="pricediv"            //all divs created
-
-
-        var img=document.createElement("img")
-        img.setAttribute("src",elem.imgUrl)
-        imgdiv.append(img)                       //img added
-
-        //content box start  
-                //namedetails
-        var namedetail=document.createElement("div")
-        namedetail.className="namedetaildiv"
-       
-        
-        var brandname=document.createElement("p")
-        brandname.textContent=elem.brand
-        
-        var prodname=document.createElement("p")
-        prodname.innerHTML=elem.name
-        
-        var prodsize=document.createElement("h3")
-        prodsize.textContent="Size: "+elem.size
-        
-        var prodcolor=document.createElement("h3")
-        prodcolor.innerHTML="Color: "+elem.color
-
-        namedetail.append(brandname,prodname,prodcolor,prodsize)
-        
-
-                   //sizedetails end
-       
-
-                   //remove button
-        var buttondiv=document.createElement("div")  
-        buttondiv.className="buttondiv"         
-        var buttonR=document.createElement("button")  
-        buttonR.style.background="white"
-        buttonR.style.border="1px solid gray"
-        var deleteicon=document.createElement("img")
-        deleteicon.src="./images/deledte icon.png"   
-        deleteicon.style.height="20px"
-        buttonR.append(deleteicon)
-        
-        buttondiv.append(buttonR)
-                 //button done
-        //removing item from bag ///////////////////////////
-       
-
-
-        contentdiv.append(namedetail,buttondiv)
-        
-        //content box end
-        //qty box started
-        qtybox=document.createElement("div")
-        plusbox=document.createElement("div")
-        minus=document.createElement("div")
-        numbox=document.createElement("div")
-        var plus=document.createElement("span")
-        plus.textContent="+"
-        var mins=document.createElement("span")
-        mins.textContent="−"
-        var quant=document.createElement("span")
-        var countqty=JSON.parse(localStorage.getItem("count"))||1;
-       
-        quant.textContent=countqty;
-
-        minus.append(mins)
-        plusbox.append(plus)
-        numbox.append(quant)
-
-
-        qtybox.append(minus,numbox,plusbox)
-        qtybox.style.display="flex"
-        qtybox.style.gap="15px"
-
-       
-        qtydiv.append(qtybox)
-        
-       
-        plusbox.addEventListener("click",function(){
-            countqty++
-            localStorage.setItem("count",JSON.stringify(countqty))
-            quant.textContent=countqty
-            qtybox.append(minus,numbox,plusbox)
-            
-            holdprice[index]=countqty*Math.floor(elem.price)
-            console.log(holdprice)
-            totalp.textContent="₹ "+holdprice[index]
-            totaldiv.append(totalp)
-            maindiv.append(imgdiv,contentdiv,pricediv,qtydiv,totaldiv)
-            document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
-            
-        })
-
-        minus.addEventListener("click",function(){
-            countqty--
-            localStorage.setItem("count",JSON.stringify(countqty))
-            if(countqty==0){
-                document.querySelector("#product").textContent=""
-                bagc.splice(index,1)
-                console.log("here",index)
-                displaycontent(bagc)
-
-            }
-            quant.textContent=countqty
-            qtybox.append(minus,numbox,plusbox)
-
-            holdprice[index]=countqty*Math.floor(elem.price)
-            console.log(holdprice)
-            totalp.textContent="₹ "+holdprice[index]
-            totaldiv.append(totalp)
-            maindiv.append(imgdiv,contentdiv,pricediv,qtydiv,totaldiv)
-            document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
-            
-        })
-    
-        buttonR.addEventListener("click",function(){
-            document.querySelector("#product").textContent=""
-            bagc.splice(index,1)
-            console.log("here",index)
-           
-            holdprice.splice(index,1)
-            
-            document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
-            console.log("remove")
-            displaycontent(bagc)
-            
-        })
-
-
-
-        var price=document.createElement("span")
-       
-        
-        price.textContent="₹ "+Math.floor(elem.price)
-        pricediv.append(price)                    //price added
-
-
-        var hr=document.createElement("hr")
-        var totaldiv=document.createElement("div")
-        totaldiv.id="totalprice"
-        var totalp=document.createElement("p")
-        totalp.textContent="₹ "+holdprice[index]
-        totaldiv.append(totalp)
-
-        
-        maindiv.append(imgdiv,contentdiv,pricediv,qtydiv,totaldiv)
-        
-        document.querySelector("#product").append(maindiv,hr)
-    })
-    }
-
-    displaycontent(bagc)
-    function bagtotal(holdprice){
-        let sum=0
-        for(var i=0;i<holdprice.length;i++){
-            sum+=holdprice[i]
-        }
-        localStorage.setItem("sumtotal",sum)
-        return sum
-        
-    }
-    console.log(bagtotal(holdprice))
-
-    document.querySelector("#bagt").textContent="₹ "+bagtotal(holdprice)
-
-   
-    
-</script>
+<script src="./scripts/cart.js"></script>
