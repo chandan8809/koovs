@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-In</title>
+    <script
+      src="https://kit.fontawesome.com/dfa13a6531.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/home.css" />
+    <style>
+        #signup{
+            border:1px solid transparent;
+            width: 50%;
+            height: 500px;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-bottom: 50px;
+
+        }
+        h1{
+            text-align: center;
+            font-family: cursive;
+        }
+        h3{
+            text-align: center;
+            font-family: serif;
+            font-size: 20px;
+
+            font-weight: 200;
+        }
+        input{
+            border:1px solid lightgray;
+            margin-left: 130px;
+            padding: 8px 15px;
+            width: 300px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #txt1{
+            margin-left: 130px;
+            padding-bottom: 40px;
+        }
+        button{
+            padding: 7px 30px;
+            margin-top: 20px;
+            margin-left: 250px;
+            background-color: white;
+            border:2px solid black;
+            font-family: 20px;
+            font-weight: bold;
+        }
+        #acc{
+            margin-left: 150px;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+      <!-- ....................header...................... -->
+    <div id="main">
+        <a href="index.html"
+          ><img
+            id="logo"
+            src="https://cdn.shopify.com/s/files/1/0584/9399/3141/files/logo_240x.png?v=1627043663"
+        /></a>
+        <div id="icon">
+          <a href=""><i class="fas fa-search"></i></a>
+          <a href="signin.html"><i class="far fa-user-circle"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+          <a href="index.html"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+      </div>
+      <div id="nav1">
+        <a href=""><p1 id="txt">MEN</p1></a>
+        <a href=""><p1 id="txt">WOMEN</p1></a>
+        <a href=""><p1 id="txt">THE BLOG</p1></a>
+        <a href=""><p1 id="txt">KOOVSXYOU</p1></a>
+        <a href=""><p1 id="txt">IN STYLE OF</p1></a>
+      </div>
+      <!-- ..............................header.............. -->
+    <form id="signup">
+      <h1>Sign in</h1>
+      <h3>Sign in to get access to exciting offers and promotions</h3>
+      <lable id="txt1">Email*</lable></br>
+      <input id="email" type="email" /></br>
+      <lable id="txt1">Password*</lable></br>
+      <input id="pass" type="password" /></br>
+      
+      <button>Sign In</button>
+     <p id="acc"> If you have't account create New an account?<a href="signup.html">Sign Up</a></p>
+
+      
+      
+
+    </form>
+    <!-- ......................footer.................. -->
+    <div id="grab">
+        <img src="footer.png" width="100%" />
+      </div>
+  
+      <!-- ......................footer.................. -->
+  </body>
+</html>
+<script>
+    document.querySelector("button").addEventListener("click", signin);
+    var userData= JSON.parse(localStorage.getItem("userDatabase"));
+    
+
+    function signin(event){
+        event.preventDefault();
+        var email=document.querySelector("#email").value;
+        var pass=document.querySelector("#pass").value;
+
+        
+        
+            for(var i=0; i<userData.length; i++){
+                if(userData[i].emailAdd==email && userData[i].password==pass){
+                    alert("Sign-In Sucessful")
+                    window.location.href="index.html"
+                }
+                else{
+                    if(userData[2].emailAdd!==email && userData[2].password!==pass){
+                        alert("Not registerd");
+                    }
+                }
+            }
+        
+
+        
+    }
+</script>

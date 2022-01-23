@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   <link rel="stylesheet" href="./styles/payment.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div id="kooImg">
+          <img src="./images/koovs logo.jpg" alt="logo" />
+        </div>
+        <div class="insidel">
+          <div id="pages">
+            <p>
+              <a href="./cart.html">Cart</a> >
+              <a href="./checkout.html">Information</a> >
+              <a href="./shipping.html">Shipping</a> >
+              <a href="./payment.html"
+                ><strong style="color: black">Payment</strong></a
+              >
+            </p>
+          </div>
+          <div class="bottomvar">
+            <div class="div1">
+              <span>Contact</span
+              ><span id="email" style="flex-grow: 3">chandankrbit3</span
+              ><span style="color: blue; font-size: 11px">Change</span>
+            </div>
+            <div class="div1">
+              <span style="width: 53px">Ship to</span
+              ><span id="address" style="flex-grow: 3">Address</span
+              ><span style="color: blue; font-size: 11px">Change</span>
+            </div>
+            <div class="div2">
+              <span>Method</span
+              ><span id="std">Standard Shipping · ₹99.00</span>
+            </div>
+          </div>
+          <p>
+            Payment<br /><span style="font-size: 12px"
+              >All transactions are secure and encrypted.</span
+            >
+          </p>
+          <div id="card">
+            <img src="./images/card details.png" alt="" />
+          </div>
+          <div>
+            <p>
+              Billing Address<br /><span style="font-size: 12px"
+                >Select the address that matches your card or payment
+                method</span
+              >
+            </p>
+          </div>
+          <div id="billing">
+            <div
+              id="blackbut"
+              style="
+                width: 16px;
+                height: 16px;
+                border: 1px solid black;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: 4px;
+                background-color: black;
+              "
+            ></div>
+            <span style="margin-left: 7px">Same as shopping adress</span>
+          </div>
+          <div id="diff">
+            <div
+              id="bluebut"
+              style="
+                width: 16px;
+                height: 16px;
+                border: 1px solid black;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: 4px;
+              "
+            ></div>
+            <span style="margin-left: 7px"
+              >Use a different billing address</span
+            >
+          </div>
+
+          <div id="againadd">
+            <div class="bottomvars">
+              <input
+                id="Email"
+                placeholder="Country/region"
+                style="grid-area: Email"
+              />
+              <input
+                id="Fname"
+                placeholder="First Name"
+                style="grid-area: Fname"
+              />
+              <input
+                id="Lname"
+                placeholder="Last Name"
+                style="grid-area: Lname"
+              />
+              <input
+                id="comp"
+                placeholder="Company(optional)"
+                style="grid-area: comp"
+              />
+              <input
+                id="Address"
+                placeholder="Address"
+                style="grid-area: Address"
+              />
+              <input
+                id="Add2"
+                placeholder="Address 2 (Optonal)"
+                style="grid-area: Add2"
+              />
+              <input id="PC" placeholder="Postal Code" style="grid-area: PC" />
+              <input id="City" placeholder="City" style="grid-area: City" />
+              <input
+                id="Region"
+                placeholder="Region (Optonal)"
+                style="grid-area: Region"
+              />
+              <input id="Phone" placeholder="Phone" style="grid-area: Phone" />
+            </div>
+          </div>
+
+          <div id="butts">
+            <a href="./shipping.html">
+              <p style="position: relative; top: 30px">Return to Shipping</p></a
+            >
+            <a href="Thank_you.html"
+              ><button id="gotoship">Complete order</button></a
+            >
+          </div>
+          <div id="reserve">
+            <div>All rights reserved Koovs</div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="inside">
+          <div class="prod"></div>
+          <hr />
+          <div id="discount">
+            <input type="text" placeholder="Gift card or discount card" />
+            <button>Apply</button>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <div>Subtotal</div>
+            <div id="sum"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <div>Shipping</div>
+            <div>₹ 99</div>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <div style="margin-top: 10px">Total</div>
+            <div id="net"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./scripts/payment.js"></script>

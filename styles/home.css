@@ -1,16 +1,16 @@
 /* .............header...... */
 #main {
   display: flex;
-  border: 1px solid none;
+  border: 1px solid transparent;
   width: 100%;
   height: 100px;
   gap: 0px;
   flex-wrap: wrap;
   margin-top: 10px;
-  position: static;
+  /* position: static; */
 }
 #logo {
-  margin-left: 650px;
+  margin-left: 530px;
   flex-wrap: row;
 }
 #icon {
